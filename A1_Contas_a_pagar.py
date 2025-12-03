@@ -145,8 +145,8 @@ for col_antiga, col_nova in colunas_renomear.items():
 df_consolidado.rename(columns=colunas_renomeadas, inplace=True)
 
 # ===================== Buscar ID da planilha no Google Drive =====================
-folder_id = "1GWIw4ZL44IS0cfr8c_a77KOvvG-vH8AN"
-sheet_name = "Financeiro_contas_a_pagar_Trilium"
+folder_id = "1euaY-ziOx2tUavWJgDgrk-HhqKWYlymY"
+sheet_name = "Financeiro_contas_a_pagar_Casa_Cuidar_1"
 
 query = f"name='{sheet_name}' and mimeType='application/vnd.google-apps.spreadsheet' and '{folder_id}' in parents and trashed=false"
 results = drive_service.files().list(q=query, spaces='drive', fields="files(id, name)").execute()
