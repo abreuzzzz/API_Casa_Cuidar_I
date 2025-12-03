@@ -17,9 +17,9 @@ client = gspread.authorize(creds)
 
 # === IDs das planilhas ===
 planilhas_ids = {
-    "Financeiro_contas_a_receber_Trilium": "1TmlB3my6KAb-6CRXUtZPJaOmTL-yW_SJou0akLPyj7A",
-    "Financeiro_contas_a_pagar_Trilium": "107Gjl8BZ6kWNguIM15wCsM6scaCM1pz-kHoseJ-zAVM",
-    "Financeiro_Completo_Trilium": "1A08gZWPn0N9OIQXPsuOoHqah_IycFXGBWcwRVR3NOCE"
+    "Financeiro_contas_a_receber_Casa_Cuidar_1": "1b9d6KvI6R4TWh5qCEIOLEPST08Ayi-pt2feGc8aaD1A",
+    "Financeiro_contas_a_pagar_Casa_Cuidar_1": "1aldWqqKZR78kgxkhfmzGCvshJDeP2-UfqIzun1FwONg",
+    "Financeiro_Completo_Casa_Cuidar_1": "11eZ0BDQC9X2ttEhn1i7TXZ3XMh3m7JxJMDMH5viQXQI"
 }
 
 # === Função para abrir e ler planilha por ID ===
@@ -31,8 +31,8 @@ def ler_planilha_por_id(nome_arquivo):
 
 # Lê os dados das planilhas principais
 print("📥 Lendo planilhas de contas a receber e contas a pagar...")
-df_receber = ler_planilha_por_id("Financeiro_contas_a_receber_Trilium")
-df_pagar = ler_planilha_por_id("Financeiro_contas_a_pagar_Trilium")
+df_receber = ler_planilha_por_id("Financeiro_contas_a_receber_Casa_Cuidar_1")
+df_pagar = ler_planilha_por_id("Financeiro_contas_a_pagar_Casa_Cuidar_1")
 
 # Adiciona a coluna tipo
 df_receber["tipo"] = "Receita"
@@ -151,7 +151,7 @@ if 'Centro de Custo 1' in df_completo.columns:
 
 # 📄 Abrir a planilha de saída e escrever UMA ÚNICA VEZ
 print("\n📤 Atualizando planilha consolidada...")
-planilha_saida = client.open_by_key(planilhas_ids["Financeiro_Completo_Trilium"])
+planilha_saida = client.open_by_key(planilhas_ids["Financeiro_Completo_Casa_Cuidar_1"])
 aba_saida = planilha_saida.sheet1
 
 # Limpa a aba e sobrescreve
