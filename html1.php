@@ -980,10 +980,10 @@ if (!isset($_SESSION['user_id'])) {
         <img src="Socia2.png" alt="Soc.ia" style="height: 16px; margin-right: 4px;" />
         Soc.ia
       </button>
-      <button class="menu-button" data-content="Indicadores Financeiros" onclick="showContent('Indicadores Financeiros')">
+      <a href="Casa_Cuidar_1_BI.php" class="menu-button">
         <i class="fas fa-chart-bar"></i>
         Indicadores Financeiros
-      </button>
+      </a>
     </div>
     <div class="user-menu">
       <button class="user-icon" onclick="toggleDropdown()">
@@ -1016,13 +1016,6 @@ if (!isset($_SESSION['user_id'])) {
       
       <div id="cards-container2" class="cards-flex"></div>
       <div id="cards-container"></div>
-    </div>
-    <div class="content" id="Indicadores Financeiros">
-      <iframe 
-        src="Casa_Cuidar_1_BI.php" 
-        style="width: 100%; height: 100hv; border: none; border-radius: 1px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); margin-top: 1px; border: 1px solid rgba(255, 255, 255, 0.1);"
-        allowfullscreen>
-    </iframe>
     </div>
   </div>
   <button id="downloadPDF" title="Baixar em PDF">
@@ -1229,13 +1222,8 @@ if (!isset($_SESSION['user_id'])) {
       allButtons.forEach(b => b.classList.remove('active'));
       document.getElementById(contentId).classList.add('active');
       document.querySelector(`[data-content="${contentId}"]`).classList.add('active');
-      // Controlar visibilidade do botão de download
       const downloadButton = document.getElementById('downloadPDF');
-      if (contentId === 'Indicadores Financeiros') {
-        downloadButton.style.display = 'none';
-      } else {
-        downloadButton.style.display = 'block';
-      }
+      downloadButton.style.display = 'block';
     }
     
     // Função para mostrar notificação de atualização
