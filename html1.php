@@ -26,6 +26,8 @@ loadEnv(__DIR__ . '/.env');
 $GOOGLE_API_KEY = getenv('GOOGLE_API_KEY');
 $GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1_IA = getenv('GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1_IA');
 $GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1 = getenv('GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1');
+$GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_2 = getenv('GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_2');
+$GOOGLE_SHEETS_FILE_ID_Rede_Casa_Cuidar = getenv('GOOGLE_SHEETS_FILE_ID_Rede_Casa_Cuidar');
 $APPS_SCRIPT_URL = getenv('APPS_SCRIPT_URL');
 
 // Inicia a sessão
@@ -978,10 +980,6 @@ if (!isset($_SESSION['user_id'])) {
         <img src="Socia2.png" alt="Soc.ia" style="height: 16px; margin-right: 4px;" />
         Soc.ia
       </button>
-      <a href="Casa_Cuidar_1_BI.php" class="menu-button">
-    <i class="fas fa-chart-bar"></i>
-    Indicadores Financeiros
-</a>
     </div>
     <div class="user-menu">
       <button class="user-icon" onclick="toggleDropdown()">
@@ -1015,13 +1013,6 @@ if (!isset($_SESSION['user_id'])) {
       <div id="cards-container2" class="cards-flex"></div>
       <div id="cards-container"></div>
     </div>
-    <div class="content" id="Indicadores Financeiros">
-      <iframe 
-        src="Casa_Cuidar_1_BI.php" 
-        style="width: 100%; height: 100hv; border: none; border-radius: 1px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); margin-top: 1px; border: 1px solid rgba(255, 255, 255, 0.1);"
-        allowfullscreen>
-    </iframe>
-    </div>
   </div>
   <button id="downloadPDF" title="Baixar em PDF">
     <i class="fas fa-file-download"></i>
@@ -1030,7 +1021,72 @@ if (!isset($_SESSION['user_id'])) {
   const GOOGLE_API_KEY = '<?php echo $GOOGLE_API_KEY; ?>';
   const GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1_IA = '<?php echo $GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1_IA; ?>';
   const GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1 = '<?php echo $GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1; ?>';
+  const GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_2 = '<?php echo $GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_2; ?>';
+  const GOOGLE_SHEETS_FILE_ID_Rede_Casa_Cuidar = '<?php echo $GOOGLE_SHEETS_FILE_ID_Rede_Casa_Cuidar; ?>';
   const APPS_SCRIPT_URL = '<?php echo $APPS_SCRIPT_URL; ?>';
+
+  const DASHBOARD_SHEET_IDS = [
+    GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1,
+    GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_2,
+    GOOGLE_SHEETS_FILE_ID_Rede_Casa_Cuidar
+  ].filter(Boolean);
+
+  async function fetchSheetValues(spreadsheetId, range) {
+    const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${GOOGLE_API_KEY}`);
+    if (!response.ok) {
+      throw new Error(`Erro HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+    if (!data.values || data.values.length === 0) {
+      return { header: null, rowsData: [] };
+    }
+
+    return {
+      header: data.values[0],
+      rowsData: data.values.slice(1)
+    };
+  }
+
+  async function loadCombinedPivotData() {
+    const range = 'Dados_Pivotados!A:BA';
+
+    if (DASHBOARD_SHEET_IDS.length === 0) {
+      throw new Error('Nenhuma planilha de dashboard foi configurada.');
+    }
+
+    const responses = await Promise.allSettled(
+      DASHBOARD_SHEET_IDS.map(sheetId => fetchSheetValues(sheetId, range))
+    );
+
+    let header = null;
+    const rowsData = [];
+    const failedSheets = [];
+
+    responses.forEach((result, index) => {
+      const sheetId = DASHBOARD_SHEET_IDS[index];
+
+      if (result.status === 'fulfilled') {
+        if (!header && result.value.header) {
+          header = result.value.header;
+        }
+        rowsData.push(...result.value.rowsData);
+        return;
+      }
+
+      failedSheets.push(sheetId);
+    });
+
+    if (!header) {
+      throw new Error('Não foi possível carregar dados de nenhuma planilha do dashboard.');
+    }
+
+    if (failedSheets.length > 0) {
+      debugLog(`⚠️ Falha ao carregar algumas planilhas: ${failedSheets.join(', ')}`);
+    }
+
+    return { header, rowsData };
+  }
   
     // Variável global para controle do período atual
     let currentPeriod = 'ultimo-mes';
@@ -1162,13 +1218,8 @@ if (!isset($_SESSION['user_id'])) {
       allButtons.forEach(b => b.classList.remove('active'));
       document.getElementById(contentId).classList.add('active');
       document.querySelector(`[data-content="${contentId}"]`).classList.add('active');
-      // Controlar visibilidade do botão de download
       const downloadButton = document.getElementById('downloadPDF');
-      if (contentId === 'Indicadores Financeiros') {
-        downloadButton.style.display = 'none';
-      } else {
-        downloadButton.style.display = 'block';
-      }
+      downloadButton.style.display = 'block';
     }
     
     // Função para mostrar notificação de atualização
@@ -1596,16 +1647,8 @@ function loadTopCentroCustosNegativosCard() {
   `;
   cardsContainer.appendChild(tableCard);
   
-  const sheetId = GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1;
-  const apiKey = GOOGLE_API_KEY;
-  const range = 'Dados_Pivotados!A:BA';
-  
-  fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
-    .then(response => response.json())
-    .then(data => {
-      const rows = data.values;
-      const header = rows[0];
-      const rowsData = rows.slice(1);
+  loadCombinedPivotData()
+    .then(({ header, rowsData }) => {
       
       // **MODIFICAÇÃO**: Encontrar índice da coluna status
       const tipoIndex = header.indexOf('tipo');
@@ -1805,16 +1848,8 @@ cardTextElement.innerHTML = text;
       `;
       cardsContainer.appendChild(chartCard);
       
-      const sheetId = GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1;
-      const apiKey = GOOGLE_API_KEY;
-      const range = 'Dados_Pivotados!A:BA';
-      
-      fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-          const rows = data.values;
-          const header = rows[0];
-          const rowsData = rows.slice(1);
+      loadCombinedPivotData()
+        .then(({ header, rowsData }) => {
           const dateIndex = header.indexOf('lastAcquittanceDate');
           const valueIndex = header.indexOf('paid_new');
           const tipoIndex = header.indexOf('tipo');
@@ -2101,16 +2136,8 @@ function loadTopCentroCustosCard() {
   `;
   cardsContainer.appendChild(tableCard);
   
-  const sheetId = GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1;
-  const apiKey = GOOGLE_API_KEY;
-  const range = 'Dados_Pivotados!A:BA';
-  
-  fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
-    .then(response => response.json())
-    .then(data => {
-      const rows = data.values;
-      const header = rows[0];
-      const rowsData = rows.slice(1);
+  loadCombinedPivotData()
+    .then(({ header, rowsData }) => {
       
       // **MODIFICAÇÃO**: Encontrar índice da coluna status
       const tipoIndex = header.indexOf('tipo');
@@ -2223,16 +2250,8 @@ function loadTopCentroCustosCard() {
       `;
       cardsContainer.appendChild(tableCard);
       
-      const sheetId = GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1;
-      const apiKey = GOOGLE_API_KEY;
-      const range = 'Dados_Pivotados!A:BA';
-      
-      fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-          const rows = data.values;
-          const header = rows[0];
-          const rowsData = rows.slice(1);
+      loadCombinedPivotData()
+        .then(({ header, rowsData }) => {
           const tipoIndex = header.indexOf('tipo');
           const categoriaIndex = header.indexOf('categoriesRatio.category');
           const valorIndex = header.indexOf('paid_new');
@@ -2305,16 +2324,8 @@ function loadTopCentroCustosCard() {
 
       loadingManager.markLoading('indicadores');
 
-      const sheetId = GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1;
-      const apiKey = GOOGLE_API_KEY;
-      const range = 'Dados_Pivotados!A:BA';
-
-      fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-          const rows = data.values;
-          const header = rows[0];
-          const rowsData = rows.slice(1);
+      loadCombinedPivotData()
+        .then(({ header, rowsData }) => {
           const dateIndex = header.indexOf('lastAcquittanceDate');
           const valueIndex = header.indexOf('paid_new');
           const tipoIndex = header.indexOf('tipo');
