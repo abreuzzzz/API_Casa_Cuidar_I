@@ -980,6 +980,10 @@ if (!isset($_SESSION['user_id'])) {
         <img src="Socia2.png" alt="Soc.ia" style="height: 16px; margin-right: 4px;" />
         Soc.ia
       </button>
+      <button class="menu-button" data-content="Indicadores Financeiros" onclick="showContent('Indicadores Financeiros')">
+        <i class="fas fa-chart-bar"></i>
+        Indicadores Financeiros
+      </button>
     </div>
     <div class="user-menu">
       <button class="user-icon" onclick="toggleDropdown()">
@@ -1012,6 +1016,13 @@ if (!isset($_SESSION['user_id'])) {
       
       <div id="cards-container2" class="cards-flex"></div>
       <div id="cards-container"></div>
+    </div>
+    <div class="content" id="Indicadores Financeiros">
+      <iframe 
+        src="Casa_Cuidar_1_BI.php" 
+        style="width: 100%; height: 100hv; border: none; border-radius: 1px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); margin-top: 1px; border: 1px solid rgba(255, 255, 255, 0.1);"
+        allowfullscreen>
+    </iframe>
     </div>
   </div>
   <button id="downloadPDF" title="Baixar em PDF">
@@ -1218,8 +1229,13 @@ if (!isset($_SESSION['user_id'])) {
       allButtons.forEach(b => b.classList.remove('active'));
       document.getElementById(contentId).classList.add('active');
       document.querySelector(`[data-content="${contentId}"]`).classList.add('active');
+      // Controlar visibilidade do botão de download
       const downloadButton = document.getElementById('downloadPDF');
-      downloadButton.style.display = 'block';
+      if (contentId === 'Indicadores Financeiros') {
+        downloadButton.style.display = 'none';
+      } else {
+        downloadButton.style.display = 'block';
+      }
     }
     
     // Função para mostrar notificação de atualização
@@ -1763,74 +1779,19 @@ function loadTopCentroCustosNegativosCard() {
       `;
       cardsContainer.appendChild(introCard);
       
-      const spreadsheetId = GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1_IA;
-      const apiKey = GOOGLE_API_KEY;
-      const range = 'Página1!A:B';
+      debugLog('ℹ️ Card de texto da planilha IA desabilitado');
+      loadingManager.markComplete('cards');
       
-      debugLog('📡 Fazendo fetch para Google Sheets...');
+      // Reset das flags de atualização
+      debugLog('🔄 Resetando flags...');
+      isUpdating = false;
+      forceSheetData = false;
       
-      fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-          debugLog(`📋 Dados recebidos: ${data.values?.length} linhas`);
-          const rows = data.values;
-          
-          rows.forEach((row, index) => {
-  const title = row[0];
-  
-  // Console.log para debug
-  console.log('Texto original:', row[1]);
-  
-  let text = row[1]
-  .replace(/<br>/g, '\n')
-  .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-  .replace(/\n/g, '<br>')
-  .replace(/- /g, '<br>- ')
-  // Decodificar entidades HTML se necessário
-  .replace(/&lt;/g, '<')
-  .replace(/&gt;/g, '>')
-  .replace(/&amp;/g, '&');
-
-  
-  // Console.log para debug
-  console.log('Texto processado:', text);
-
-            const iconClass = "fa-solid fa-chart-column";
-            const card = document.createElement('div');
-            card.classList.add('card', 'card-editable');
-            
-            const cardId = `card-editable-${index}`;
-            card.innerHTML = `
-  <div class="card-title"><i class="${iconClass}" style="margin-right: 8px;"></i>${title}</div>
-  <div class="card-text" id="${cardId}">${text}</div>
-`;
-            cardsContainer.appendChild(card);
-            
-            // Forçar innerHTML novamente
-const cardTextElement = document.getElementById(cardId);
-cardTextElement.innerHTML = text;
-            
-            debugLog(`🏗️ Card criado: ${cardId} com título "${title}"`);
-          });
-          
-          debugLog('🔧 Configurando edição inline...');
-          setupInlineEditing();
-
-
-          debugLog('✅ Cards editáveis configurados');
-          loadingManager.markComplete('cards');
-          
-          // Reset das flags de atualização
-          debugLog('🔄 Resetando flags...');
-          isUpdating = false;
-          forceSheetData = false;
-          
-          loadCombinedChartCard();
-          loadCategoryChartsCard();
-          loadIndicadoresFinanceirosCard();
-          loadTopCentroCustosCard();
-          loadTopCentroCustosNegativosCard();
-        });
+      loadCombinedChartCard();
+      loadCategoryChartsCard();
+      loadIndicadoresFinanceirosCard();
+      loadTopCentroCustosCard();
+      loadTopCentroCustosNegativosCard();
     }
     
     // NOVA FUNÇÃO: Gráfico combinado que unifica linha e barras
