@@ -1,8 +1,8 @@
 <?php
-// FunÃ§Ã£o para carregar variÃ¡veis do .env
+// Função para carregar variáveis do .env
 function loadEnv($path) {
     if (!file_exists($path)) {
-        throw new Exception("Arquivo .env nÃ£o encontrado");
+        throw new Exception("Arquivo .env não encontrado");
     }
     
     $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -20,14 +20,14 @@ function loadEnv($path) {
     }
 }
 
-// Carrega as variÃ¡veis de ambiente
+// Carrega as variáveis de ambiente
 loadEnv(__DIR__ . '/.env');
 
 $GOOGLE_API_KEY = getenv('GOOGLE_API_KEY');
 $GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1 = getenv('GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_1');
 $GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_2 = getenv('GOOGLE_SHEETS_FILE_ID_Casa_Cuidar_2');
 $GOOGLE_SHEETS_FILE_ID_Rede_Casa_Cuidar = getenv('GOOGLE_SHEETS_FILE_ID_Rede_Casa_Cuidar');
-// Inicia a sessÃ£o
+// Inicia a sessão
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -418,7 +418,7 @@ if (!isset($_SESSION['user_id'])) {
         background: rgba(15, 15, 35, 0.8) !important;
     }
     
-    /* CorreÃ§Ã£o para calendÃ¡rio do input month */
+    /* Correção para calendário do input month */
     .date-input-group input[type="month"]::-webkit-calendar-picker-indicator {
         filter: invert(1);
         cursor: pointer;
@@ -828,7 +828,7 @@ if (!isset($_SESSION['user_id'])) {
         background: rgba(255, 255, 255, 0.06) !important;
     }
     
-    /* Ajustar cores especÃ­ficas das tabelas */
+    /* Ajustar cores específicas das tabelas */
     table td[style*="background: #f5f5f5"],
     table td[style*="background: #ffffff"],
     table td[style*="background: white"],
@@ -857,7 +857,7 @@ if (!isset($_SESSION['user_id'])) {
         background: rgba(255, 255, 255, 0.08) !important;
     }
     
-    /* ForÃ§ar todas as cores escuras para claras */
+    /* Forçar todas as cores escuras para claras */
     table td[style*="color: #333"],
     table td[style*="color: #666"],
     table td[style*="color: #555"],
@@ -884,7 +884,7 @@ if (!isset($_SESSION['user_id'])) {
         color: #60a5fa !important;
     }
     
-    /* Garantir que todo texto em tabelas seja claro por padrÃ£o */
+    /* Garantir que todo texto em tabelas seja claro por padrão */
     table *,
     table span,
     table div,
@@ -892,7 +892,7 @@ if (!isset($_SESSION['user_id'])) {
         color: #cbd5e1 !important;
     }
     
-    /* ExceÃ§Ãµes para cores especÃ­ficas jÃ¡ claras */
+    /* Exceções para cores específicas já claras */
     table *[style*="color: #2e7d32"],
     table *[style*="color: #1b5e20"],
     table *[style*="color: #4ade80"] {
@@ -923,7 +923,7 @@ if (!isset($_SESSION['user_id'])) {
         backdrop-filter: blur(10px);
     }
     
-    /* ===== CORREÃ‡ÃƒO DRE - Fundo escuro ===== */
+    /* ===== CORREÇÃO DRE - Fundo escuro ===== */
 #tableDRE { background: transparent !important; }
 #tableDRE td { color: #e2e8f0 !important; }
 #tableDRE tr { background: rgba(15, 15, 35, 0.6) !important; }
@@ -962,7 +962,7 @@ if (!isset($_SESSION['user_id'])) {
 #tableDRE th[style*="position: sticky"] { background: rgba(15, 15, 35, 0.97) !important; }
 
 
-    /* Ajustar fundo dos grÃ¡ficos Plotly */
+    /* Ajustar fundo dos gráficos Plotly */
     .js-plotly-plot {
         background: transparent !important;
     }
@@ -975,7 +975,7 @@ if (!isset($_SESSION['user_id'])) {
         fill: transparent !important;
     }
     
-    /* Ajustar cores dos grÃ¡ficos para tema escuro */
+    /* Ajustar cores dos gráficos para tema escuro */
     .js-plotly-plot .gridlayer .x,
     .js-plotly-plot .gridlayer .y {
         stroke: rgba(255, 255, 255, 0.1) !important;
@@ -986,7 +986,7 @@ if (!isset($_SESSION['user_id'])) {
         stroke: rgba(255, 255, 255, 0.2) !important;
     }
     
-    /* Texto dos grÃ¡ficos */
+    /* Texto dos gráficos */
     .js-plotly-plot text {
         fill: #ffffff !important;
     }
@@ -996,7 +996,7 @@ if (!isset($_SESSION['user_id'])) {
         fill: #cbd5e1 !important;
     }
     
-    /* Selects mÃºltiplos com melhor aparÃªncia */
+    /* Selects múltiplos com melhor aparência */
 .filter-group select[multiple] {
     padding: 10px 14px;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1181,7 +1181,7 @@ if (!isset($_SESSION['user_id'])) {
     margin-top: 8px;
 }
 
-/* InstruÃ§Ã£o de filtros */
+/* Instrução de filtros */
 .filter-instruction {
     background: rgba(255, 215, 0, 0.1);
     border: 1px solid rgba(255, 215, 0, 0.3);
@@ -1231,7 +1231,7 @@ if (!isset($_SESSION['user_id'])) {
     }
 }
 
-/* Canvas dos grÃ¡ficos Chart.js */
+/* Canvas dos gráficos Chart.js */
 canvas {
     max-height: 400px;
 }
@@ -1242,13 +1242,13 @@ canvas {
 
 /* Menu Superior - Igual ao Soc.ia */
 /* Menu Superior - Centralizado */
-/* Menu Superior - Logo Ã  esquerda, botÃµes centralizados */
+/* Menu Superior - Logo à esquerda, botões centralizados */
 /* Menu Superior - Com altura maior */
 .topbar {
     background: rgba(15, 15, 35, 0.95);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px 32px;  /* AUMENTADO: 16px â†’ 20px */
+    padding: 20px 32px;  /* AUMENTADO: 16px → 20px */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1258,11 +1258,11 @@ canvas {
     right: 0;
     z-index: 2000;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    min-height: 70px;  /* ADICIONADO: altura mÃ­nima */
+    min-height: 70px;  /* ADICIONADO: altura mínima */
 }
 
 .logo {
-    font-size: 18px;  /* AUMENTADO: 16px â†’ 18px */
+    font-size: 18px;  /* AUMENTADO: 16px → 18px */
     font-weight: 700;
     background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
     -webkit-background-clip: text;
@@ -1276,7 +1276,7 @@ canvas {
     display: flex;
     gap: 8px;
     background: rgba(255, 255, 255, 0.05);
-    padding: 8px;  /* AUMENTADO: 6px â†’ 8px */
+    padding: 8px;  /* AUMENTADO: 6px → 8px */
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: absolute;
@@ -1288,9 +1288,9 @@ canvas {
     background: none;
     border: none;
     color: #94a3b8;
-    font-size: 15px;  /* AUMENTADO: 14px â†’ 15px */
+    font-size: 15px;  /* AUMENTADO: 14px → 15px */
     font-weight: 500;
-    padding: 12px 24px;  /* AUMENTADO: 10px 20px â†’ 12px 24px */
+    padding: 12px 24px;  /* AUMENTADO: 10px 20px → 12px 24px */
     cursor: pointer;
     border-radius: 8px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1332,13 +1332,13 @@ canvas {
 }
 
 .menu-button img {
-    height: 18px;  /* AUMENTADO: 16px â†’ 18px */
+    height: 18px;  /* AUMENTADO: 16px → 18px */
     margin-right: 4px;
 }
 
 /* Ajustar body e sidebar para compensar a altura maior */
 body {
-    padding-top: 90px;  /* AUMENTADO: 80px â†’ 90px */
+    padding-top: 90px;  /* AUMENTADO: 80px → 90px */
 }
 
 .dashboard-container {
@@ -1346,12 +1346,12 @@ body {
 }
 
 .sidebar {
-    top: 90px;  /* AUMENTADO: 80px â†’ 90px */
+    top: 90px;  /* AUMENTADO: 80px → 90px */
     height: calc(100vh - 90px);  /* AJUSTADO */
 }
 
 .mobile-toggle {
-    top: 100px;  /* AUMENTADO: 90px â†’ 100px */
+    top: 100px;  /* AUMENTADO: 90px → 100px */
 }
 
 .pdf-loading-overlay {
@@ -1391,11 +1391,11 @@ body {
             </button>
         </div>
         
-        <!-- Div vazia para balancear o espaÃ§o -->
+        <!-- Div vazia para balancear o espaço -->
         <div style="width: 200px;"></div>
     </div>
 
-    <button class="mobile-toggle" onclick="toggleSidebar()">â˜°</button>
+    <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
     
     <div class="dashboard-container">
         <!-- Sidebar -->
@@ -1407,70 +1407,70 @@ body {
             <ul class="sidebar-menu">
                 <li>
                     <a href="#visao-geral" class="menu-link active" onclick="showPage('visao-geral', event)">
-                        <span class="icon">ðŸ“Š</span>
-                        <span>VisÃ£o Geral</span>
+                        <span class="icon">📊</span>
+                        <span>Visão Geral</span>
                     </a>
                 </li>
                 <li>
                     <a href="#receita" class="menu-link" onclick="showPage('receita', event)">
-                        <span class="icon">ðŸ’°</span>
+                        <span class="icon">💰</span>
                         <span>Contas a Receber</span>
                     </a>
                 </li>
                 <li>
                     <a href="#despesa" class="menu-link" onclick="showPage('despesa', event)">
-                        <span class="icon">ðŸ’¸</span>
+                        <span class="icon">💸</span>
                         <span>Contas a Pagar</span>
                     </a>
                 </li>
                 <li>
                     <a href="#fluxo-caixa" class="menu-link" onclick="showPage('fluxo-caixa', event)">
-                        <span class="icon">ðŸ’µ</span>
+                        <span class="icon">💵</span>
                         <span>Fluxo de Caixa</span>
                     </a>
                 </li>
                 <li>
                     <a href="#centro-custo" class="menu-link" onclick="showPage('centro-custo', event)">
-                        <span class="icon">ðŸ¢</span>
+                        <span class="icon">🏢</span>
                         <span>Centro de Custo</span>
                     </a>
                 </li>
                 <li>
                     <a href="#indicadores" class="menu-link" onclick="showPage('indicadores', event)">
-                        <span class="icon">ðŸ“ˆ</span>
+                        <span class="icon">📈</span>
                         <span>Indicadores</span>
                     </a>
                 </li>
                 
                 <li>
     <a href="#rentabilidade" class="menu-link" onclick="showPage('rentabilidade', event)">
-        <span class="icon">ðŸ’Ž</span>
-        <span>AnÃ¡lise de Rentabilidade</span>
+        <span class="icon">💎</span>
+        <span>Análise de Rentabilidade</span>
     </a>
 </li>
 
                 <li>
                     <a href="#dre" class="menu-link" onclick="showPage('dre', event)">
-                        <span class="icon">ðŸ“‹</span>
+                        <span class="icon">📋</span>
                         <span>DRE</span>
                     </a>
                 </li>
                 <!--// <li>
                    // <a href="#simulador" class="menu-link" onclick="showPage('simulador', event)">
-                   //     <span class="icon">ðŸŽ¯</span>
+                   //     <span class="icon">🎯</span>
                        // <span>Simulador DRE</span>
                    // </a>
              //  </li> -->
                 <li>
   <a href="#simulador-fluxo" class="menu-link" onclick="showPage('simulador-fluxo', event)">
-    <span class="icon">ðŸ’°</span>
+    <span class="icon">💰</span>
     <span>Simulador Fluxo de Caixa</span>
   </a>
 </li>
 
 <li>
   <a href="#exportar-png" class="menu-link" onclick="exportCurrentPageToPNG(event)">
-    <span class="icon">ðŸ–¼ï¸</span>
+    <span class="icon">🖼️</span>
     <span>Exportar como Imagem</span>
   </a>
 </li>
@@ -1482,43 +1482,43 @@ body {
         <!-- Main Content -->
         <main class="main-content">
             <div class="content-wrapper">
-                <!-- VisÃ£o Geral -->
+                <!-- Visão Geral -->
                 <section id="visao-geral" class="page-section active">
                     <div class="page-header">
-                        <h2>VisÃ£o Geral</h2>
-                        <p>Panorama completo das suas finanÃ§as</p>
+                        <h2>Visão Geral</h2>
+                        <p>Panorama completo das suas finanças</p>
                     </div>
                     
                     <div class="controls">
                         <div class="date-toggle">
-  <!-- NOVO: Adicione esta opÃ§Ã£o PRIMEIRO -->
+  <!-- NOVO: Adicione esta opção PRIMEIRO -->
   <input type="radio" name="dateType" id="realizadoProjetado" value="realizadoProjetado" checked hidden>
-  <label for="realizadoProjetado">ðŸ“… Realizado + Projetado</label>
+  <label for="realizadoProjetado">📅 Realizado + Projetado</label>
   
-  <!-- OpÃ§Ãµes existentes - remova o 'checked' do dueDate -->
+  <!-- Opções existentes - remova o 'checked' do dueDate -->
   <input type="radio" name="dateType" id="dueDate" value="dueDate" hidden>
-  <label for="dueDate">ðŸ“… Data de Vencimento</label>
+  <label for="dueDate">📅 Data de Vencimento</label>
   
   <input type="radio" name="dateType" id="compDate" value="financialEvent.competenceDate" hidden>
-  <label for="compDate">ðŸ“… Data de CompetÃªncia</label>
+  <label for="compDate">📅 Data de Competência</label>
 </div>
                         
                         <div class="date-range-section">
-                            <h3>ðŸ“† PerÃ­odo</h3>
+                            <h3>📆 Período</h3>
                             <div class="date-range-inputs">
                                 <div class="date-input-group">
                                     <label for="startMonth">Data Inicial:</label>
                                     <input type="month" id="startMonth" name="startMonth">
                                 </div>
                                 
-                                <div class="date-range-divider">â†’</div>
+                                <div class="date-range-divider">→</div>
                                 
                                 <div class="date-input-group">
                                     <label for="endMonth">Data Final:</label>
                                     <input type="month" id="endMonth" name="endMonth">
                                 </div>
                                 
-                                <button class="clear-date-btn" onclick="clearDateRange()">ðŸ—‘ï¸ Limpar</button>
+                                <button class="clear-date-btn" onclick="clearDateRange()">🗑️ Limpar</button>
                             </div>
                         </div>
                         
@@ -1551,16 +1551,16 @@ body {
                                 </select>
                             </div>
                         </div>
-                        <!-- Adicione esta instruÃ§Ã£o aqui -->
+                        <!-- Adicione esta instrução aqui -->
 <div class="filter-instruction">
-    <span class="instruction-icon">ðŸ’¡</span>
-    <span class="instruction-text">Use <kbd>Ctrl</kbd> + <kbd>Clique</kbd> (ou <kbd>Cmd</kbd> no Mac) para selecionar mÃºltiplas opÃ§Ãµes nos filtros</span>
+    <span class="instruction-icon">💡</span>
+    <span class="instruction-text">Use <kbd>Ctrl</kbd> + <kbd>Clique</kbd> (ou <kbd>Cmd</kbd> no Mac) para selecionar múltiplas opções nos filtros</span>
 </div>
                     </div>
                     
                     
                     <div id="loading" class="loading">
-                        <p>â³ Carregando dados...</p>
+                        <p>⏳ Carregando dados...</p>
                     </div>
                     
                     <div id="error" class="error" style="display:none;"></div>
@@ -1568,22 +1568,22 @@ body {
                     <div id="dashboard" style="display:none;">
                         <div class="kpis">
                             <div class="kpi-card positive">
-                                <h3>ðŸ’° Receber Total</h3>
+                                <h3>💰 Receber Total</h3>
                                 <div class="value" id="receitaTotal">R$ 0,00</div>
                             </div>
                             
                             <div class="kpi-card negative">
-                                <h3>ðŸ’¸ Pagar Total</h3>
+                                <h3>💸 Pagar Total</h3>
                                 <div class="value" id="despesaTotal">R$ 0,00</div>
                             </div>
                             
                             <div class="kpi-card" id="resultadoCard">
-                                <h3>ðŸ“ˆ Total do PerÃ­odo</h3>
+                                <h3>📈 Total do Período</h3>
                                 <div class="value" id="resultadoLiquido">R$ 0,00</div>
                             </div>
                             
                             <div class="kpi-card">
-                                <h3>ðŸ“Š Taxa da Margem</h3>
+                                <h3>📊 Taxa da Margem</h3>
                                 <div class="value" id="taxaMargem">0%</div>
                             </div>
                         </div>
@@ -1594,7 +1594,7 @@ body {
                         </div>
                         
                         <div class="chart">
-                            <h2>Total do PerÃ­odo</h2>
+                            <h2>Total do Período</h2>
                             <div id="chartValorLiquido"></div>
                         </div>
                     </div>
@@ -1604,38 +1604,38 @@ body {
                 <section id="receita" class="page-section">
                     <div class="page-header">
                         <h2>Contas a Receber</h2>
-                        <p>AnÃ¡lise detalhada a Receber</p>
+                        <p>Análise detalhada a Receber</p>
                     </div>
                     
                     <div class="controls">
                         <div class="date-toggle">
   <input type="radio" name="dateTypeReceita" id="realizadoProjetadoReceita" value="realizadoProjetado" checked hidden>
-  <label for="realizadoProjetadoReceita">ðŸ“… Realizado + Projetado</label>
+  <label for="realizadoProjetadoReceita">📅 Realizado + Projetado</label>
   
   <input type="radio" name="dateTypeReceita" id="dueDateReceita" value="dueDate" hidden>
-  <label for="dueDateReceita">ðŸ“… Data de Vencimento</label>
+  <label for="dueDateReceita">📅 Data de Vencimento</label>
   
   <input type="radio" name="dateTypeReceita" id="compDateReceita" value="financialEvent.competenceDate" hidden>
-  <label for="compDateReceita">ðŸ“… Data de CompetÃªncia</label>
+  <label for="compDateReceita">📅 Data de Competência</label>
 </div>
 
                         
                         <div class="date-range-section">
-                            <h3>ðŸ“† PerÃ­odo</h3>
+                            <h3>📆 Período</h3>
                             <div class="date-range-inputs">
                                 <div class="date-input-group">
                                     <label for="startMonthReceita">Data Inicial:</label>
                                     <input type="month" id="startMonthReceita" name="startMonthReceita">
                                 </div>
                                 
-                                <div class="date-range-divider">â†’</div>
+                                <div class="date-range-divider">→</div>
                                 
                                 <div class="date-input-group">
                                     <label for="endMonthReceita">Data Final:</label>
                                     <input type="month" id="endMonthReceita" name="endMonthReceita">
                                 </div>
                                 
-                                <button class="clear-date-btn" onclick="clearDateRangeReceita()">ðŸ—‘ï¸ Limpar</button>
+                                <button class="clear-date-btn" onclick="clearDateRangeReceita()">🗑️ Limpar</button>
                             </div>
                         </div>
                         
@@ -1672,17 +1672,17 @@ body {
                     
                     <div class="kpis">
                         <div class="kpi-card positive">
-                            <h3>ðŸ’° A Receber Total</h3>
+                            <h3>💰 A Receber Total</h3>
                             <div class="value" id="receitaTotalPage">R$ 0,00</div>
                         </div>
                         
                         <div class="kpi-card">
-                            <h3>ðŸŽ¯ Ticket MÃ©dio</h3>
+                            <h3>🎯 Ticket Médio</h3>
                             <div class="value" id="ticketMedioReceita">R$ 0,00</div>
                         </div>
                         
                         <div class="kpi-card">
-                            <h3>ðŸ‘¥ MÃ©dia de Clientes</h3>
+                            <h3>👥 Média de Clientes</h3>
                             <div class="value" id="mediaClientesReceita">0</div>
                         </div>
                     </div>
@@ -1694,7 +1694,7 @@ body {
                         </div>
                         
                         <div class="chart">
-                            <h2>MÃ©dia por Categoria</h2>
+                            <h2>Média por Categoria</h2>
                             <div id="chartMediaCategoria"></div>
                         </div>
                         
@@ -1705,7 +1705,7 @@ body {
                     </div>
                     
                     <div class="chart">
-                        <h2>A Receber por PerÃ­odo</h2>
+                        <h2>A Receber por Período</h2>
                         <div id="chartReceitaPeriodo"></div>
                     </div>
                 </section>
@@ -1714,39 +1714,39 @@ body {
                 <section id="despesa" class="page-section">
                     <div class="page-header">
                         <h2>A Pagar</h2>
-                        <p>AnÃ¡lise detalhada a Pagar</p>
+                        <p>Análise detalhada a Pagar</p>
                     </div>
                     
                     <div class="controls">
                        <div class="date-toggle">
   <input type="radio" name="dateTypeDespesa" id="realizadoProjetadoDespesa" value="realizadoProjetado" checked hidden>
-  <label for="realizadoProjetadoDespesa">ðŸ“… Realizado + Projetado</label>
+  <label for="realizadoProjetadoDespesa">📅 Realizado + Projetado</label>
   
   <input type="radio" name="dateTypeDespesa" id="dueDateDespesa" value="dueDate" hidden>
-  <label for="dueDateDespesa">ðŸ“… Data de Vencimento</label>
+  <label for="dueDateDespesa">📅 Data de Vencimento</label>
   
   <input type="radio" name="dateTypeDespesa" id="compDateDespesa" value="financialEvent.competenceDate" hidden>
-  <label for="compDateDespesa">ðŸ“… Data de CompetÃªncia</label>
+  <label for="compDateDespesa">📅 Data de Competência</label>
 </div>
 
 
                         
                         <div class="date-range-section">
-                            <h3>ðŸ“† PerÃ­odo</h3>
+                            <h3>📆 Período</h3>
                             <div class="date-range-inputs">
                                 <div class="date-input-group">
                                     <label for="startMonthDespesa">Data Inicial:</label>
                                     <input type="month" id="startMonthDespesa" name="startMonthDespesa">
                                 </div>
                                 
-                                <div class="date-range-divider">â†’</div>
+                                <div class="date-range-divider">→</div>
                                 
                                 <div class="date-input-group">
                                     <label for="endMonthDespesa">Data Final:</label>
                                     <input type="month" id="endMonthDespesa" name="endMonthDespesa">
                                 </div>
                                 
-                                <button class="clear-date-btn" onclick="clearDateRangeDespesa()">ðŸ—‘ï¸ Limpar</button>
+                                <button class="clear-date-btn" onclick="clearDateRangeDespesa()">🗑️ Limpar</button>
                             </div>
                         </div>
                         
@@ -1783,17 +1783,17 @@ body {
                     
                     <div class="kpis">
                         <div class="kpi-card negative">
-                            <h3>ðŸ’¸ A Pagar Total</h3>
+                            <h3>💸 A Pagar Total</h3>
                             <div class="value" id="despesaTotalPage">R$ 0,00</div>
                         </div>
                         
                         <div class="kpi-card">
-                            <h3>ðŸŽ¯ Ticket MÃ©dio</h3>
+                            <h3>🎯 Ticket Médio</h3>
                             <div class="value" id="ticketMedioDespesa">R$ 0,00</div>
                         </div>
                         
                         <div class="kpi-card">
-                            <h3>ðŸª MÃ©dia de Fornecedores</h3>
+                            <h3>🏪 Média de Fornecedores</h3>
                             <div class="value" id="mediaFornecedoresDespesa">0</div>
                         </div>
                     </div>
@@ -1805,7 +1805,7 @@ body {
                         </div>
                         
                         <div class="chart">
-                            <h2>MÃ©dia por Categoria</h2>
+                            <h2>Média por Categoria</h2>
                             <div id="chartMediaCategoriaDespesa"></div>
                         </div>
                         
@@ -1816,7 +1816,7 @@ body {
                     </div>
                     
                     <div class="chart">
-                        <h2>A Pagar por PerÃ­odo</h2>
+                        <h2>A Pagar por Período</h2>
                         <div id="chartDespesaPeriodo"></div>
                     </div>
                 </section>
@@ -1825,39 +1825,39 @@ body {
 <section id="fluxo-caixa" class="page-section">
     <div class="page-header">
         <h2>Fluxo de Caixa</h2>
-        <p>MovimentaÃ§Ã£o financeira detalhada</p>
+        <p>Movimentação financeira detalhada</p>
     </div>
     
     <div class="controls">
         <div class="date-toggle">
   <input type="radio" name="dateTypeFluxo" id="realizadoProjetadoFluxo" value="realizadoProjetado" checked hidden>
-  <label for="realizadoProjetadoFluxo">ðŸ“… Realizado + Projetado</label>
+  <label for="realizadoProjetadoFluxo">📅 Realizado + Projetado</label>
   
   <input type="radio" name="dateTypeFluxo" id="dueDateFluxo" value="dueDate" hidden>
-  <label for="dueDateFluxo">ðŸ“… Data de Vencimento</label>
+  <label for="dueDateFluxo">📅 Data de Vencimento</label>
   
   <input type="radio" name="dateTypeFluxo" id="compDateFluxo" value="financialEvent.competenceDate" hidden>
-  <label for="compDateFluxo">ðŸ“… Data de CompetÃªncia</label>
+  <label for="compDateFluxo">📅 Data de Competência</label>
 </div>
 
 
         
         <div class="date-range-section">
-            <h3>ðŸ“† PerÃ­odo</h3>
+            <h3>📆 Período</h3>
             <div class="date-range-inputs">
                 <div class="date-input-group">
                     <label for="startMonthFluxo">Data Inicial:</label>
                     <input type="month" id="startMonthFluxo" name="startMonthFluxo">
                 </div>
                 
-                <div class="date-range-divider">â†’</div>
+                <div class="date-range-divider">→</div>
                 
                 <div class="date-input-group">
                     <label for="endMonthFluxo">Data Final:</label>
                     <input type="month" id="endMonthFluxo" name="endMonthFluxo">
                 </div>
                 
-                <button class="clear-date-btn" onclick="clearDateRangeFluxo()">ðŸ—‘ï¸ Limpar</button>
+                <button class="clear-date-btn" onclick="clearDateRangeFluxo()">🗑️ Limpar</button>
             </div>
         </div>
         
@@ -1896,12 +1896,12 @@ body {
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
         <h2>Fluxo de Caixa Detalhado por Categoria</h2>
         <button style="padding: 10px 20px; background: #4facfe; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;" onclick="exportFluxoDetalhado()">
-            ðŸ’¾ Exportar CSV
+            💾 Exportar CSV
         </button>
     </div>
     <div style="overflow-x: auto;">
             <table id="tableFluxoDetalhado" style="width: 100%; border-collapse: collapse;">
-                <!-- Tabela serÃ¡ gerada dinamicamente -->
+                <!-- Tabela será gerada dinamicamente -->
             </table>
         </div>
     </div>
@@ -1910,7 +1910,7 @@ body {
   <h2>Consolidado</h2>
   <div style="overflow-x:auto">
     <table id="tableResultadoLiquidoConsolidado" style="width: 100%; border-collapse: collapse;">
-      <!-- Tabela serÃ¡ gerada dinamicamente -->
+      <!-- Tabela será gerada dinamicamente -->
     </table>
   </div>
 </div>
@@ -1939,39 +1939,39 @@ body {
 <section id="centro-custo" class="page-section">
     <div class="page-header">
         <h2>Centro de Custo</h2>
-        <p>AnÃ¡lise por centro de custo</p>
+        <p>Análise por centro de custo</p>
     </div>
     
     <div class="controls">
         <div class="date-toggle">
   <input type="radio" name="dateTypeCentroCusto" id="realizadoProjetadoCentroCusto" value="realizadoProjetado" checked hidden>
-  <label for="realizadoProjetadoCentroCusto">ðŸ“… Realizado + Projetado</label>
+  <label for="realizadoProjetadoCentroCusto">📅 Realizado + Projetado</label>
   
   <input type="radio" name="dateTypeCentroCusto" id="dueDateCentroCusto" value="dueDate" hidden>
-  <label for="dueDateCentroCusto">ðŸ“… Data de Vencimento</label>
+  <label for="dueDateCentroCusto">📅 Data de Vencimento</label>
   
   <input type="radio" name="dateTypeCentroCusto" id="compDateCentroCusto" value="financialEvent.competenceDate" hidden>
-  <label for="compDateCentroCusto">ðŸ“… Data de CompetÃªncia</label>
+  <label for="compDateCentroCusto">📅 Data de Competência</label>
 </div>
 
 
         
         <div class="date-range-section">
-            <h3>ðŸ“† PerÃ­odo</h3>
+            <h3>📆 Período</h3>
             <div class="date-range-inputs">
                 <div class="date-input-group">
                     <label for="startMonthCentroCusto">Data Inicial:</label>
                     <input type="month" id="startMonthCentroCusto" name="startMonthCentroCusto">
                 </div>
                 
-                <div class="date-range-divider">â†’</div>
+                <div class="date-range-divider">→</div>
                 
                 <div class="date-input-group">
                     <label for="endMonthCentroCusto">Data Final:</label>
                     <input type="month" id="endMonthCentroCusto" name="endMonthCentroCusto">
                 </div>
                 
-                <button class="clear-date-btn" onclick="clearDateRangeCentroCusto()">ðŸ—‘ï¸ Limpar</button>
+                <button class="clear-date-btn" onclick="clearDateRangeCentroCusto()">🗑️ Limpar</button>
             </div>
         </div>
         
@@ -2008,22 +2008,22 @@ body {
     
     <div class="kpis">
         <div class="kpi-card">
-            <h3>ðŸ“Š Taxa da Margem</h3>
+            <h3>📊 Taxa da Margem</h3>
             <div class="value" id="taxaMargemCentroCusto">0%</div>
         </div>
         
         <div class="kpi-card" id="resultadoCardCentroCusto">
-            <h3>ðŸ“ˆ Total do PerÃ­odo</h3>
+            <h3>📈 Total do Período</h3>
             <div class="value" id="resultadoLiquidoCentroCusto">R$ 0,00</div>
         </div>
         
         <div class="kpi-card positive">
-            <h3>ðŸ’° Total de a Receber</h3>
+            <h3>💰 Total de a Receber</h3>
             <div class="value" id="totalReceitaCentroCusto">R$ 0,00</div>
         </div>
         
         <div class="kpi-card negative">
-            <h3>ðŸ’¸ Total de a Pagar</h3>
+            <h3>💸 Total de a Pagar</h3>
             <div class="value" id="totalDespesaCentroCusto">R$ 0,00</div>
         </div>
     </div>
@@ -2032,12 +2032,12 @@ body {
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
         <h2>Saldo Mensal por Centro de Custo</h2>
         <button style="padding: 10px 20px; background: #4facfe; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;" onclick="exportSaldoCentroCusto()">
-            ðŸ’¾ Exportar CSV
+            💾 Exportar CSV
         </button>
     </div>
     <div style="overflow-x: auto;">
             <table id="tableSaldoCentroCusto" style="width: 100%; border-collapse: collapse; table-layout: auto;">
-                <!-- Tabela serÃ¡ gerada dinamicamente -->
+                <!-- Tabela será gerada dinamicamente -->
             </table>
         </div>
     </div>
@@ -2059,7 +2059,7 @@ body {
     
     <div class="controls">
         <div class="date-range-section">
-            <h3>ðŸ“… PerÃ­odo</h3>
+            <h3>📅 Período</h3>
             <div style="display: flex; gap: 15px; align-items: center;">
                 <div class="date-input-group" style="max-width: 200px;">
                     <label for="yearSelectIndicadores">Ano:</label>
@@ -2069,18 +2069,18 @@ body {
                         <option value="2026" selected>2026</option>
                     </select>
                 </div>
-                <button style="padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 25px;" onclick="loadAllIndicadores()">ðŸ”„ Atualizar</button>
+                <button style="padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 25px;" onclick="loadAllIndicadores()">🔄 Atualizar</button>
             </div>
         </div>
     </div>
     
     <div id="loadingIndicadores" class="loading" style="display:none;">
-        <p>â³ Carregando indicadores...</p>
+        <p>⏳ Carregando indicadores...</p>
     </div>
     
     <div id="errorIndicadores" class="error" style="display:none;"></div>
     
-    <!-- GrÃ¡ficos de Indicadores -->
+    <!-- Gráficos de Indicadores -->
     <div id="indicadoresGraphsContent" style="display:none;">
         <div class="charts-row">
             <div class="chart">
@@ -2089,7 +2089,7 @@ body {
             </div>
             
             <div class="chart">
-                <h2>Saldo por MÃªs</h2>
+                <h2>Saldo por Mês</h2>
                 <canvas id="chartMes"></canvas>
             </div>
         </div>
@@ -2112,12 +2112,12 @@ body {
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
         <h2>Indicadores Financeiros Mensais (DRE)</h2>
         <button style="padding: 10px 20px; background: #4facfe; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;" onclick="exportIndicadores()">
-            ðŸ’¾ Exportar CSV
+            💾 Exportar CSV
         </button>
     </div>
     <div style="overflow-x: auto;">
             <table id="tableIndicadores" style="width: 100%; border-collapse: collapse; table-layout: auto;">
-                <!-- Tabela serÃ¡ gerada dinamicamente -->
+                <!-- Tabela será gerada dinamicamente -->
             </table>
         </div>
     </div>
@@ -2130,43 +2130,43 @@ body {
 <section id="dre" class="page-section">
     <div class="page-header">
         <h2>DRE</h2>
-        <p>DemonstraÃ§Ã£o do Resultado do ExercÃ­cio</p>
+        <p>Demonstração do Resultado do Exercício</p>
     </div>
     
     <div class="controls">
         <!-- Toggle de Tipo de Data -->
         <div class="date-toggle">
             <input type="radio" name="dateTypeDRE" id="realizadoProjetadoDRE" value="realizadoProjetado" checked hidden>
-            <label for="realizadoProjetadoDRE">ðŸ“… Realizado + Projetado</label>
+            <label for="realizadoProjetadoDRE">📅 Realizado + Projetado</label>
             
             <input type="radio" name="dateTypeDRE" id="dueDateDRE" value="dueDate" hidden>
-            <label for="dueDateDRE">ðŸ“… Data de Vencimento</label>
+            <label for="dueDateDRE">📅 Data de Vencimento</label>
             
             <input type="radio" name="dateTypeDRE" id="compDateDRE" value="financialEvent.competenceDate" hidden>
-            <label for="compDateDRE">ðŸ“… Data de CompetÃªncia</label>
+            <label for="compDateDRE">📅 Data de Competência</label>
         </div>
         
-        <!-- SeleÃ§Ã£o de PerÃ­odo -->
+        <!-- Seleção de Período -->
         <div class="date-range-section">
-            <h3>ðŸ“† PerÃ­odo</h3>
+            <h3>📆 Período</h3>
             <div class="date-range-inputs">
                 <div class="date-input-group">
                     <label for="startMonthDRE">Data Inicial:</label>
                     <input type="month" id="startMonthDRE" name="startMonthDRE">
                 </div>
                 
-                <div class="date-range-divider">â†’</div>
+                <div class="date-range-divider">→</div>
                 
                 <div class="date-input-group">
                     <label for="endMonthDRE">Data Final:</label>
                     <input type="month" id="endMonthDRE" name="endMonthDRE">
                 </div>
                 
-                <button class="clear-date-btn" onclick="clearDateRangeDRE()">ðŸ—‘ï¸ Limpar</button>
+                <button class="clear-date-btn" onclick="clearDateRangeDRE()">🗑️ Limpar</button>
             </div>
         </div>
         
-        <!-- Filtros MÃºltiplos -->
+        <!-- Filtros Múltiplos -->
         <div class="filters">
             <div class="filter-group">
                 <label>Status:</label>
@@ -2208,27 +2208,27 @@ body {
             </div>
         </div>
         
-        <!-- InstruÃ§Ã£o de Uso -->
+        <!-- Instrução de Uso -->
         <div class="filter-instruction">
-            <span class="instruction-icon">ðŸ’¡</span>
-            <span class="instruction-text">Use <kbd>Ctrl</kbd> + <kbd>Clique</kbd> (ou <kbd>Cmd</kbd> no Mac) para selecionar mÃºltiplas opÃ§Ãµes nos filtros</span>
+            <span class="instruction-icon">💡</span>
+            <span class="instruction-text">Use <kbd>Ctrl</kbd> + <kbd>Clique</kbd> (ou <kbd>Cmd</kbd> no Mac) para selecionar múltiplas opções nos filtros</span>
         </div>
         
     
     <div id="loadingDRE" class="loading" style="display:none;">
-        <p>â³ Carregando DRE...</p>
+        <p>⏳ Carregando DRE...</p>
     </div>
     
     <div id="errorDRE" class="error" style="display:none;"></div>
     
     <div class="chart" style="background: rgba(15, 15, 35, 0.97);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-            <h2>DemonstraÃ§Ã£o do Resultado do ExercÃ­cio</h2>
-            <button style="padding: 10px 20px; background: #4facfe; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;" onclick="exportDRE()">ðŸ“¥ Exportar CSV</button>
+            <h2>Demonstração do Resultado do Exercício</h2>
+            <button style="padding: 10px 20px; background: #4facfe; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;" onclick="exportDRE()">📥 Exportar CSV</button>
         </div>
         <div style="overflow-x: auto">
     <table id="tableDRE" style="width: 100%; border-collapse: collapse; table-layout: auto">
-                <!-- Tabela serÃ¡ gerada dinamicamente -->
+                <!-- Tabela será gerada dinamicamente -->
             </table>
         </div>
     </div>
@@ -2240,12 +2240,12 @@ body {
 <section id="simulador" class="page-section">
     <div class="page-header">
         <h2>Simulador</h2>
-        <p>SimulaÃ§Ãµes e projeÃ§Ãµes financeiras</p>
+        <p>Simulações e projeções financeiras</p>
     </div>
     
     <div class="controls">
         <div class="date-range-section">
-            <h3>ðŸ“… PerÃ­odo</h3>
+            <h3>📅 Período</h3>
             <div style="display: flex; gap: 15px; align-items: center;">
                 <div class="date-input-group" style="max-width: 200px;">
                     <label for="yearSelectSimulador">Ano:</label>
@@ -2255,14 +2255,14 @@ body {
                         <option value="2026" selected>2026</option>
                     </select>
                 </div>
-                <button style="padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 25px;" onclick="loadSimuladorData()">ðŸ”„ Carregar Dados</button>
-                <button style="padding: 10px 20px; background: #f5576c; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 25px;" onclick="resetSimulacao()">â†º Resetar</button>
+                <button style="padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 25px;" onclick="loadSimuladorData()">🔄 Carregar Dados</button>
+                <button style="padding: 10px 20px; background: #f5576c; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 25px;" onclick="resetSimulacao()">↺ Resetar</button>
             </div>
         </div>
     </div>
     
     <div id="loadingSimulador" class="loading" style="display:none;">
-        <p>â³ Carregando dados...</p>
+        <p>⏳ Carregando dados...</p>
     </div>
     
     <div id="errorSimulador" class="error" style="display:none;"></div>
@@ -2270,19 +2270,19 @@ body {
     <div id="simuladorContent" style="display:none;">
         <!-- Sliders de Ajuste -->
         <div class="chart">
-            <h2>Ajustes de SimulaÃ§Ã£o</h2>
+            <h2>Ajustes de Simulação</h2>
             <div id="slidersContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; padding: 20px;">
-                <!-- Sliders serÃ£o gerados dinamicamente -->
+                <!-- Sliders serão gerados dinamicamente -->
             </div>
         </div>
         
-        <!-- Tabela e GrÃ¡fico empilhados verticalmente -->
+        <!-- Tabela e Gráfico empilhados verticalmente -->
 <div style="margin-top: 25px;">
     <div class="chart">
         <h2>Comparativo Real x Simulado</h2>
         <div style="overflow-x: auto;">
             <table id="tableSimulador" style="width: 100%; border-collapse: collapse; table-layout: auto;">
-                <!-- Tabela serÃ¡ gerada dinamicamente -->
+                <!-- Tabela será gerada dinamicamente -->
             </table>
         </div>
     </div>
@@ -2299,41 +2299,41 @@ body {
 
 
 
-<!-- AnÃ¡lise de Rentabilidade -->
+<!-- Análise de Rentabilidade -->
 <section id="rentabilidade" class="page-section">
     <div class="page-header">
-        <h2>AnÃ¡lise de Rentabilidade</h2>
-        <p>AnÃ¡lise detalhada de rentabilidade por centro de custo</p>
+        <h2>Análise de Rentabilidade</h2>
+        <p>Análise detalhada de rentabilidade por centro de custo</p>
     </div>
     
     <div class="controls">
         <div class="date-toggle">
             <input type="radio" name="dateTypeRentabilidade" id="realizadoProjetadoRentabilidade" value="realizadoProjetado" checked hidden>
-            <label for="realizadoProjetadoRentabilidade">ðŸ“… Realizado + Projetado</label>
+            <label for="realizadoProjetadoRentabilidade">📅 Realizado + Projetado</label>
             
             <input type="radio" name="dateTypeRentabilidade" id="dueDateRentabilidade" value="dueDate" hidden>
-            <label for="dueDateRentabilidade">ðŸ“… Data de Vencimento</label>
+            <label for="dueDateRentabilidade">📅 Data de Vencimento</label>
             
             <input type="radio" name="dateTypeRentabilidade" id="compDateRentabilidade" value="financialEvent.competenceDate" hidden>
-            <label for="compDateRentabilidade">ðŸ“… Data de CompetÃªncia</label>
+            <label for="compDateRentabilidade">📅 Data de Competência</label>
             
             <input type="radio" name="dateTypeRentabilidade" id="payDateRentabilidade" value="financialEvent.paymentDate" hidden>
-            <label for="payDateRentabilidade">ðŸ“… Data de Pagamento</label>
+            <label for="payDateRentabilidade">📅 Data de Pagamento</label>
         </div>
         
         <div class="date-range-section">
-            <h3><i class="fas fa-calendar-alt"></i> PerÃ­odo de AnÃ¡lise</h3>
+            <h3><i class="fas fa-calendar-alt"></i> Período de Análise</h3>
             <div class="date-range-inputs">
                 <div class="date-input-group">
                     <label>Data Inicial</label>
                     <input type="month" id="startDateRentabilidade">
                 </div>
-                <div class="date-range-divider">â†’</div>
+                <div class="date-range-divider">→</div>
                 <div class="date-input-group">
                     <label>Data Final</label>
                     <input type="month" id="endDateRentabilidade">
                 </div>
-                <button class="clear-date-btn" onclick="clearDateRangeRentabilidade()">ðŸ—‘ï¸ Limpar</button>
+                <button class="clear-date-btn" onclick="clearDateRangeRentabilidade()">🗑️ Limpar</button>
             </div>
         </div>
         
@@ -2365,9 +2365,9 @@ body {
         </div>
         
         <div class="filter-instruction">
-            <span class="instruction-icon">â„¹ï¸</span>
+            <span class="instruction-icon">ℹ️</span>
             <div class="instruction-text">
-                Use <kbd>Ctrl</kbd> (Windows) ou <kbd>Cmd</kbd> (Mac) + clique para selecionar mÃºltiplos itens nos filtros
+                Use <kbd>Ctrl</kbd> (Windows) ou <kbd>Cmd</kbd> (Mac) + clique para selecionar múltiplos itens nos filtros
             </div>
         </div>
     </div>
@@ -2396,9 +2396,9 @@ body {
         </div>
     </div>
     
-    <!-- AnÃ¡lise por Centro de Custo -->
+    <!-- Análise por Centro de Custo -->
     <div class="chart">
-        <h2>AnÃ¡lise por Centro de Custo</h2>
+        <h2>Análise por Centro de Custo</h2>
         <div id="tabelaCentrosCustosRentabilidade"></div>
     </div>
     
@@ -2415,7 +2415,7 @@ body {
     
     <!-- Break-Even Analysis -->
     
-    <!-- AnÃ¡lise de ContribuiÃ§Ã£o Marginal -->
+    <!-- Análise de Contribuição Marginal -->
 </section>
 
 
@@ -2426,25 +2426,25 @@ body {
 <section id="simulador-fluxo" class="page-section">
   <div class="page-header">
     <h2>Simulador de Fluxo de Caixa</h2>
-    <p>Simule diferentes cenÃ¡rios editando os valores do fluxo de caixa</p>
+    <p>Simule diferentes cenários editando os valores do fluxo de caixa</p>
   </div>
 
   <div class="controls">
     <div class="date-toggle">
   <input type="radio" name="dateTypeSimFluxo" id="realizadoProjetadoSimFluxo" value="realizadoProjetado" checked hidden>
-  <label for="realizadoProjetadoSimFluxo">ðŸ“… Realizado + Projetado</label>
+  <label for="realizadoProjetadoSimFluxo">📅 Realizado + Projetado</label>
   
   <input type="radio" name="dateTypeSimFluxo" id="dueDateSimFluxo" value="dueDate" hidden>
-  <label for="dueDateSimFluxo">ðŸ“… Data de Vencimento</label>
+  <label for="dueDateSimFluxo">📅 Data de Vencimento</label>
   
   <input type="radio" name="dateTypeSimFluxo" id="compDateSimFluxo" value="financialEvent.competenceDate" hidden>
-  <label for="compDateSimFluxo">ðŸ“… Data de CompetÃªncia</label>
+  <label for="compDateSimFluxo">📅 Data de Competência</label>
 </div>
 
 
     
     <div class="date-range-section">
-      <h3>PerÃ­odo</h3>
+      <h3>Período</h3>
       <div class="date-range-inputs">
         <div class="date-input-group">
           <label for="startMonthSimFluxo">Data Inicial</label>
@@ -2491,30 +2491,30 @@ body {
     
     <div style="display: flex; gap: 10px; margin-top: 20px;">
       <button style="padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;" onclick="resetSimuladorFluxo()">
-        ðŸ”„ Resetar Valores
+        🔄 Resetar Valores
       </button>
       <button style="padding: 10px 20px; background: #4facfe; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;" onclick="exportSimuladorFluxo()">
-        ðŸ’¾ Exportar SimulaÃ§Ã£o
+        💾 Exportar Simulação
       </button>
     </div>
   </div>
 
   <div class="chart">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-      <h2>Fluxo de Caixa Detalhado por Categoria (EditÃ¡vel)</h2>
+      <h2>Fluxo de Caixa Detalhado por Categoria (Editável)</h2>
       <div style="background: #fff3cd; padding: 10px 15px; border-radius: 8px; border: 1px solid #ffc107;">
-        <span style="color: #856404; font-weight: 600;">ðŸ’¡ Clique nos valores para editar e simular diferentes cenÃ¡rios</span>
+        <span style="color: #856404; font-weight: 600;">💡 Clique nos valores para editar e simular diferentes cenários</span>
       </div>
     </div>
     <div style="overflow-x: auto;">
       <table id="tableSimuladorFluxoDetalhado" style="width: 100%; border-collapse: collapse;">
-        <!-- Tabela serÃ¡ gerada dinamicamente -->
+        <!-- Tabela será gerada dinamicamente -->
       </table>
     </div>
   </div>
 
 <div class="chart">
-  <h2>Consolidado do Total do PerÃ­odo (Simulado)</h2>
+  <h2>Consolidado do Total do Período (Simulado)</h2>
   <div style="overflow-x:auto;">
     <table id="tableConsolidadoResultadoLiquidoSimulado" style="width:100%; border-collapse: collapse;"></table>
   </div>
@@ -2524,7 +2524,7 @@ body {
     <h2>Consolidado de a Receber (Simulado)</h2>
     <div style="overflow-x: auto;">
       <table id="tableSimuladorReceitaConsolidado" style="width: 100%; border-collapse: collapse;">
-        <!-- Tabela serÃ¡ gerada dinamicamente -->
+        <!-- Tabela será gerada dinamicamente -->
       </table>
     </div>
   </div>
@@ -2578,7 +2578,7 @@ body {
 
         async function loadCombinedCsvData() {
             if (GOOGLE_SHEETS_FILE_IDS.length === 0) {
-                throw new Error('Nenhuma planilha foi configurada nas variÃ¡veis de ambiente.');
+                throw new Error('Nenhuma planilha foi configurada nas variáveis de ambiente.');
             }
 
             const requests = GOOGLE_SHEETS_FILE_IDS.map(fileId => parseCsvFromUrl(buildCsvUrl(fileId)));
@@ -2603,7 +2603,7 @@ body {
             }
 
             if (combinedData.length === 0) {
-                throw new Error(`NÃ£o foi possÃ­vel carregar dados das planilhas configuradas. ${errors.join(' | ')}`);
+                throw new Error(`Não foi possível carregar dados das planilhas configuradas. ${errors.join(' | ')}`);
             }
 
             return combinedData;
@@ -2643,12 +2643,12 @@ const dreFluxoMapping = {
 };
 
         
-        // FunÃ§Ã£o para formatar valores no padrÃ£o 1,1Mi, 300k ou 40,03
+        // Função para formatar valores no padrão 1,1Mi, 300k ou 40,03
 function formatCompactValue(value) {
     const absValue = Math.abs(value);
     
     if (absValue >= 1000000) {
-        // MilhÃµes
+        // Milhões
         const formatted = (value / 1000000).toFixed(1).replace('.', ',');
         return formatted + 'Mi';
     } else if (absValue >= 1000) {
@@ -2670,7 +2670,7 @@ function formatCompactValue(value) {
         let currentDateTypeDRE = 'realizadoProjetado';
 
         
-// VariÃ¡veis para Simulador de Fluxo de Caixa
+// Variáveis para Simulador de Fluxo de Caixa
 let currentDateTypeSimFluxo = 'realizadoProjetado';
 let simuladorFluxoOriginalData = {}; // Armazena valores originais
 let simuladorFluxoEditedData = {}; // Armazena valores editados
@@ -2687,15 +2687,15 @@ const statusLabels = {
     'RENEGOTIATED': 'Renegociado'
 };
 
-// FunÃ§Ã£o helper para obter o label do status
+// Função helper para obter o label do status
 function getStatusLabel(status) {
     return statusLabels[status] || status;
 }
 
-// FunÃ§Ã£o helper para obter a data correta baseada no tipo de filtro
+// Função helper para obter a data correta baseada no tipo de filtro
 function getDateForRow(row, dateType) {
   if (dateType === 'realizadoProjetado') {
-    // Se lastAcquittanceDate existe e nÃ£o estÃ¡ vazio, usa ela
+    // Se lastAcquittanceDate existe e não está vazio, usa ela
     const lastAcquittance = row.lastAcquittanceDate;
     if (lastAcquittance && lastAcquittance.trim() !== '') {
       return lastAcquittance;
@@ -2708,13 +2708,13 @@ function getDateForRow(row, dateType) {
   }
 }
 
-        // FunÃ§Ã£o para setar datas padrÃ£o do ano vigente
+        // Função para setar datas padrão do ano vigente
 function setDefaultDates() {
     const currentYear = new Date().getFullYear();
     const startDate = `${currentYear}-01`; // Janeiro
     const endDate = `${currentYear}-12`;   // Dezembro
     
-    // VisÃ£o Geral
+    // Visão Geral
     const startMonth = document.getElementById('startMonth');
     const endMonth = document.getElementById('endMonth');
     if (startMonth) startMonth.value = startDate;
@@ -2766,7 +2766,7 @@ const startMonthDRE = document.getElementById('startMonthDRE');
         function showPage(pageId, event) {
     event.preventDefault();
     
-    // Remover classe active de todas as seÃ§Ãµes
+    // Remover classe active de todas as seções
     document.querySelectorAll('.page-section').forEach(section => {
         section.classList.remove('active');
     });
@@ -2776,7 +2776,7 @@ const startMonthDRE = document.getElementById('startMonthDRE');
         link.classList.remove('active');
     });
     
-    // Adicionar classe active na seÃ§Ã£o e link correspondentes
+    // Adicionar classe active na seção e link correspondentes
     document.getElementById(pageId).classList.add('active');
     event.currentTarget.classList.add('active');
     
@@ -2785,7 +2785,7 @@ const startMonthDRE = document.getElementById('startMonthDRE');
         document.getElementById('sidebar').classList.remove('active');
     }
     
-    // Atualizar dados especÃ­ficos de cada pÃ¡gina ao trocar
+    // Atualizar dados específicos de cada página ao trocar
     if (pageId === 'visao-geral') {
         updateDashboard();
     } else if (pageId === 'receita') {
@@ -2805,7 +2805,7 @@ const startMonthDRE = document.getElementById('startMonthDRE');
     } else if (pageId === 'simulador-fluxo') {
         initSimuladorFluxoPage();
     } else if (pageId === 'rentabilidade') {
-        // Carregar dados se ainda nÃ£o foram carregados, senÃ£o apenas atualizar
+        // Carregar dados se ainda não foram carregados, senão apenas atualizar
         if (globalDataRentabilidade.length === 0) {
             loadRentabilidade();
         } else {
@@ -2870,7 +2870,7 @@ document.getElementById('fluxoFilterDRE').addEventListener('change', loadDREData
     }
 });
 
-// Event listeners para perÃ­odo DRE
+// Event listeners para período DRE
 ['startMonthDRE', 'endMonthDRE'].forEach(id => {
     const element = document.getElementById(id);
     if (element) {
@@ -2879,17 +2879,17 @@ document.getElementById('fluxoFilterDRE').addEventListener('change', loadDREData
 });
 
         
-        // Setar datas padrÃ£o ANTES de atualizar dashboard
+        // Setar datas padrão ANTES de atualizar dashboard
         setDefaultDates();
         
         document.getElementById('loading').style.display = 'none';
         document.getElementById('dashboard').style.display = 'block';
         
         
-        // Primeira renderizaÃ§Ã£o
+        // Primeira renderização
         updateDashboard();
         
-        // Alternar para competÃªncia e voltar (para forÃ§ar redimensionamento)
+        // Alternar para competência e voltar (para forçar redimensionamento)
         setTimeout(() => {
             document.getElementById('compDate').checked = true;
             currentDateType = 'financialEvent.competenceDate';
@@ -3027,7 +3027,7 @@ document.getElementById('fluxoFilterDRE').addEventListener('change', loadDREData
     const select = document.getElementById(selectId);
     if (!select) return;
     
-    // Limpar opÃ§Ãµes existentes (exceto a primeira "Todos")
+    // Limpar opções existentes (exceto a primeira "Todos")
     while (select.options.length > 1) {
         select.remove(1);
     }
@@ -3035,7 +3035,7 @@ document.getElementById('fluxoFilterDRE').addEventListener('change', loadDREData
     // Ordenar items
     const sortedItems = Array.from(items).sort();
     
-    // Adicionar novas opÃ§Ãµes
+    // Adicionar novas opções
     sortedItems.forEach(item => {
         const option = document.createElement('option');
         option.value = item;
@@ -3049,23 +3049,23 @@ document.getElementById('fluxoFilterDRE').addEventListener('change', loadDREData
         function isDateInRange(dateStr, startMonth, endMonth) {
     if (!dateStr) return true;
     
-    // Se nÃ£o houver filtro de data, retornar true
+    // Se não houver filtro de data, retornar true
     if (!startMonth && !endMonth) return true;
     
     // Normalizar a data removendo timezone e convertendo para objeto Date
     let dateObj;
     
-    // Se a data contÃ©m 'T' (formato ISO com hora)
+    // Se a data contém 'T' (formato ISO com hora)
     if (dateStr.includes('T')) {
         // Remover timezone e hora, manter apenas YYYY-MM-DD
         const datePart = dateStr.split('T')[0];
         dateObj = new Date(datePart + 'T00:00:00');
     } else {
-        // Data jÃ¡ estÃ¡ no formato YYYY-MM-DD
+        // Data já está no formato YYYY-MM-DD
         dateObj = new Date(dateStr + 'T00:00:00');
     }
     
-    // Verificar se a data Ã© vÃ¡lida
+    // Verificar se a data é válida
     if (isNaN(dateObj.getTime())) return true;
     
     // Extrair YYYY-MM da data convertida
@@ -3088,13 +3088,13 @@ document.getElementById('fluxoFilterDRE').addEventListener('change', loadDREData
 }
 
 
-// FunÃ§Ã£o helper para extrair ano-mÃªs de forma segura
+// Função helper para extrair ano-mês de forma segura
 function getYearMonthFromDate(dateStr) {
     if (!dateStr) return null;
     
     let dateObj;
     
-    // Se a data contÃ©m 'T' (formato ISO com hora)
+    // Se a data contém 'T' (formato ISO com hora)
     if (dateStr.includes('T')) {
         const datePart = dateStr.split('T')[0];
         dateObj = new Date(datePart + 'T00:00:00');
@@ -3102,7 +3102,7 @@ function getYearMonthFromDate(dateStr) {
         dateObj = new Date(dateStr + 'T00:00:00');
     }
     
-    // Verificar se a data Ã© vÃ¡lida
+    // Verificar se a data é válida
     if (isNaN(dateObj.getTime())) return null;
     
     const year = dateObj.getFullYear();
@@ -3380,7 +3380,7 @@ function getYearMonthFromDate(dateStr) {
             
             const layout = {
                 margin: { l: 150, r: 20, t: 20, b: 40 },
-                xaxis: { title: 'MÃ©dia (R$)' },
+                xaxis: { title: 'Média (R$)' },
                 yaxis: { automargin: true },
                 hoverlabel: {
     bgcolor: 'rgba(15, 15, 35, 0.95)',
@@ -3444,8 +3444,8 @@ function getYearMonthFromDate(dateStr) {
         const dateStr = getDateForRow(row, currentDateTypeReceita);
         if (!dateStr) return;
         
-        const monthKey = getYearMonthFromDate(dateStr);  // âœ… CORREÃ‡ÃƒO
-        if (!monthKey) return;  // âœ…
+        const monthKey = getYearMonthFromDate(dateStr);  // ✅ CORREÇÃO
+        if (!monthKey) return;  // ✅
         
         if (!monthlyData[monthKey]) monthlyData[monthKey] = 0;
         monthlyData[monthKey] += row.total;
@@ -3464,7 +3464,7 @@ function getYearMonthFromDate(dateStr) {
         y: valores,
         type: 'bar',
         marker: { color: '#4facfe' },
-        text: valores.map(v => formatCompactValue(v)), // Adiciona os rÃ³tulos formatados
+        text: valores.map(v => formatCompactValue(v)), // Adiciona os rótulos formatados
         textposition: 'auto',
         textfont: {
             family: 'Inter, sans-serif',
@@ -3474,7 +3474,7 @@ function getYearMonthFromDate(dateStr) {
     };
     
     const layout = {
-        xaxis: { title: 'MÃªs' },
+        xaxis: { title: 'Mês' },
         yaxis: { title: 'Valor (R$)' },
         hoverlabel: {
             bgcolor: 'rgba(15, 15, 35, 0.95)',
@@ -3566,7 +3566,7 @@ function getYearMonthFromDate(dateStr) {
             
             const layout = {
                 margin: { l: 150, r: 20, t: 20, b: 40 },
-                xaxis: { title: 'MÃ©dia (R$)' },
+                xaxis: { title: 'Média (R$)' },
                 yaxis: { automargin: true },
                 hoverlabel: {
     bgcolor: 'rgba(15, 15, 35, 0.95)',
@@ -3653,7 +3653,7 @@ function getYearMonthFromDate(dateStr) {
         y: valores,
         type: 'bar',
         marker: { color: '#f5576c' },
-        text: valores.map(v => formatCompactValue(v)), // Adiciona os rÃ³tulos formatados
+        text: valores.map(v => formatCompactValue(v)), // Adiciona os rótulos formatados
         textposition: 'auto',
         textfont: {
             family: 'Inter, sans-serif',
@@ -3663,7 +3663,7 @@ function getYearMonthFromDate(dateStr) {
     };
     
     const layout = {
-        xaxis: { title: 'MÃªs' },
+        xaxis: { title: 'Mês' },
         yaxis: { title: 'Valor (R$)' },
         hoverlabel: {
             bgcolor: 'rgba(15, 15, 35, 0.95)',
@@ -3703,7 +3703,7 @@ function getYearMonthFromDate(dateStr) {
         textfont: {
             family: 'Inter, sans-serif',
             size: 12,
-            color: '#ffffff',  // â† ALTERADO PARA BRANCO
+            color: '#ffffff',  // ← ALTERADO PARA BRANCO
             weight: 'bold'
         }
     };
@@ -3719,14 +3719,14 @@ function getYearMonthFromDate(dateStr) {
         textfont: {
             family: 'Inter, sans-serif',
             size: 12,
-            color: '#ffffff',  // â† ALTERADO PARA BRANCO
+            color: '#ffffff',  // ← ALTERADO PARA BRANCO
             weight: 'bold'
         }
     };
     
     const layout = {
         barmode: 'group',
-        xaxis: { title: 'MÃªs' },
+        xaxis: { title: 'Mês' },
         yaxis: { title: 'Valor (R$)' },
         hovermode: 'closest',
         showlegend: true,
@@ -3763,7 +3763,7 @@ function getYearMonthFromDate(dateStr) {
     const trace = {
         x: monthLabels,
         y: netValues,
-        name: 'Valor LÃ­quido',
+        name: 'Valor Líquido',
         type: 'scatter',
         mode: 'lines+markers+text',
         line: { color: '#667eea', width: 3 },
@@ -3773,15 +3773,15 @@ function getYearMonthFromDate(dateStr) {
         textfont: {
             family: 'Inter, sans-serif',
             size: 12,
-            color: '#ffffff',  // â† ALTERADO PARA BRANCO
+            color: '#ffffff',  // ← ALTERADO PARA BRANCO
             weight: 'bold'
         }
     };
     
     const layout = {
-        xaxis: { title: 'MÃªs',
+        xaxis: { title: 'Mês',
         showgrid: false },
-        yaxis: { title: 'Total do PerÃ­odo (R$)' },
+        yaxis: { title: 'Total do Período (R$)' },
         hovermode: 'closest',
         showlegend: false,
         hoverlabel: {
@@ -3808,7 +3808,7 @@ function getYearMonthFromDate(dateStr) {
             }).format(value);
         }
         
-        // Event Listeners - VisÃ£o Geral
+        // Event Listeners - Visão Geral
         document.querySelectorAll('input[name="dateType"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
                 currentDateType = e.target.value;
@@ -3853,7 +3853,7 @@ function getYearMonthFromDate(dateStr) {
         document.getElementById('startMonthDespesa').addEventListener('change', updateDespesaPage);
         document.getElementById('endMonthDespesa').addEventListener('change', updateDespesaPage);
         
-        // VariÃ¡veis para Fluxo de Caixa
+        // Variáveis para Fluxo de Caixa
 let currentDateTypeFluxo = 'realizadoProjetado';
 
 function clearDateRangeFluxo() {
@@ -3921,7 +3921,7 @@ function updateFluxoCaixaPage() {
 }
 
 function createFluxoDetalhado(data) {
-    // Agrupar dados por mÃªs, tipo e categoria
+    // Agrupar dados por mês, tipo e categoria
     const monthlyData = {};
     const categorias = new Set();
     const months = new Set();
@@ -3969,8 +3969,8 @@ function createFluxoDetalhado(data) {
     html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: right; min-width: 140px; background: #f5f5f5; font-weight: bold;">TOTAL</th>';
     html += '</tr></thead><tbody>';
     
-    // SeÃ§Ã£o de Receitas
-    html += '<tr style="background: #e8f5e9;"><td colspan="' + (sortedMonths.length + 3) + '" style="padding: 10px; border: 1px solid #ddd; font-weight: bold; color: #2e7d32;">ðŸ’° A RECEBER</td></tr>';
+    // Seção de Receitas
+    html += '<tr style="background: #e8f5e9;"><td colspan="' + (sortedMonths.length + 3) + '" style="padding: 10px; border: 1px solid #ddd; font-weight: bold; color: #2e7d32;">💰 A RECEBER</td></tr>';
     
     sortedCategorias.forEach(categoria => {
         let hasReceitaData = false;
@@ -4009,8 +4009,8 @@ function createFluxoDetalhado(data) {
     html += `<td style="padding: 12px; border: 1px solid #ddd; text-align: right; background: #a5d6a7; font-weight: bold; color: #1b5e20; font-size: 1.1em;">${formatCurrency(totalGeralReceitas)}</td>`;
     html += '</tr>';
     
-    // SeÃ§Ã£o de Despesas
-    html += '<tr style="background: #ffebee;"><td colspan="' + (sortedMonths.length + 3) + '" style="padding: 10px; border: 1px solid #ddd; font-weight: bold; color: #c62828;">ðŸ’¸ A PAGAR</td></tr>';
+    // Seção de Despesas
+    html += '<tr style="background: #ffebee;"><td colspan="' + (sortedMonths.length + 3) + '" style="padding: 10px; border: 1px solid #ddd; font-weight: bold; color: #c62828;">💸 A PAGAR</td></tr>';
     
     sortedCategorias.forEach(categoria => {
         let hasDespesaData = false;
@@ -4049,9 +4049,9 @@ function createFluxoDetalhado(data) {
     html += `<td style="padding: 12px; border: 1px solid #ddd; text-align: right; background: #ef9a9a; font-weight: bold; color: #b71c1c; font-size: 1.1em;">${formatCurrency(totalGeralDespesas)}</td>`;
     html += '</tr>';
     
-    // Linha de Resultado LÃ­quido
+    // Linha de Resultado Líquido
     html += '<tr style="background: #e3f2fd; font-weight: bold;">';
-    html += '<td colspan="2" style="padding: 12px; border: 1px solid #ddd; position: sticky; left: 0; background: #e3f2fd; z-index: 1;">ðŸ“Š TOTAL DO PERÃODO</td>';
+    html += '<td colspan="2" style="padding: 12px; border: 1px solid #ddd; position: sticky; left: 0; background: #e3f2fd; z-index: 1;">📊 TOTAL DO PERÍODO</td>';
     
     let resultadoGeralLiquido = 0;
     sortedMonths.forEach(month => {
@@ -4210,7 +4210,7 @@ document.getElementById('startMonthFluxo').addEventListener('change', updateFlux
 document.getElementById('endMonthFluxo').addEventListener('change', updateFluxoCaixaPage);
 
 function buildResultadoLiquidoConsolidado(data) {
-    // Agregar dados por mÃªs
+    // Agregar dados por mês
     const receitaPorMes = {};
     const despesaPorMes = {};
     
@@ -4230,16 +4230,16 @@ function buildResultadoLiquidoConsolidado(data) {
         }
     });
     
-    // Obter todos os meses Ãºnicos
+    // Obter todos os meses únicos
     const allMonths = new Set([...Object.keys(receitaPorMes), ...Object.keys(despesaPorMes)]);
     const sortedMonths = Array.from(allMonths).sort();
     
     // Montar HTML da tabela
     let html = '<thead><tr style="background: #4facfe; color: white">';
-    html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: left">MÃªs</th>';
+    html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: left">Mês</th>';
     html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: right">A Receber</th>';
     html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: right">A Pagar</th>';
-    html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: right">Total do PerÃ­odo</th>';
+    html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: right">Total do Período</th>';
     html += '</tr></thead><tbody>';
     
     let totalReceita = 0;
@@ -4256,7 +4256,7 @@ function buildResultadoLiquidoConsolidado(data) {
         totalDespesa += despesa;
         totalResultado += resultado;
         
-        // Cores conforme padrÃ£o das outras tabelas
+        // Cores conforme padrão das outras tabelas
         const bgRow = index % 2 === 0 ? 'rgba(255, 255, 255, 0.03)' : 'rgba(255, 255, 255, 0.02)';
         const corReceita = '2e7d32'; // Verde para receita
         const corDespesa = 'c62828'; // Vermelho para despesa
@@ -4286,7 +4286,7 @@ function buildResultadoLiquidoConsolidado(data) {
     document.getElementById('tableResultadoLiquidoConsolidado').innerHTML = html;
 }
 
-// VariÃ¡veis para Centro de Custo
+// Variáveis para Centro de Custo
 let currentDateTypeCentroCusto = 'realizadoProjetado';
 
 function clearDateRangeCentroCusto() {
@@ -4464,7 +4464,7 @@ function createSaldoCentroCustoTable(data) {
     sortedCentros.forEach(centro => {
         // Linha do Centro de Custo (total)
         html += `<tr style="background: #e3f2fd; font-weight: bold;">`;
-        html += `<td style="padding: 12px; border: 1px solid #ddd; position: sticky; left: 0; background: #e3f2fd; z-index: 1;">ðŸ¢ ${centro}</td>`;
+        html += `<td style="padding: 12px; border: 1px solid #ddd; position: sticky; left: 0; background: #e3f2fd; z-index: 1;">🏢 ${centro}</td>`;
         
         let totalCentro = 0;
         sortedMonths.forEach(month => {
@@ -4496,7 +4496,7 @@ function createSaldoCentroCustoTable(data) {
         
         Array.from(categorias).sort().forEach(categoria => {
             html += `<tr style="background: #f5f5f5;">`;
-            html += `<td style="padding: 8px 12px 8px 40px; border: 1px solid #ddd; position: sticky; left: 0; background: #f5f5f5; z-index: 1; color: #666; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${categoria}">â†³ ${categoria}</td>`;
+            html += `<td style="padding: 8px 12px 8px 40px; border: 1px solid #ddd; position: sticky; left: 0; background: #f5f5f5; z-index: 1; color: #666; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${categoria}">↳ ${categoria}</td>`;
             
             let totalCategoria = 0;
             sortedMonths.forEach(month => {
@@ -4557,7 +4557,7 @@ function createSaldoCentroCustoChart(data) {
     const sortedCentros = sortedData.map(item => item.centro);
     const sortedSaldos = sortedData.map(item => item.saldo);
     
-    // Cores dinÃ¢micas (verde para positivo, vermelho para negativo)
+    // Cores dinâmicas (verde para positivo, vermelho para negativo)
     const colors = sortedSaldos.map(saldo => saldo >= 0 ? '#4facfe' : '#f5576c');
     
     const trace = {
@@ -4566,7 +4566,7 @@ function createSaldoCentroCustoChart(data) {
         type: 'bar',
         orientation: 'h',
         marker: { color: colors },
-        text: sortedSaldos.map(v => formatCompactValue(v)),  // RÃ³tulos formatados
+        text: sortedSaldos.map(v => formatCompactValue(v)),  // Rótulos formatados
         textposition: 'auto',
         textfont: {
             family: 'Inter, sans-serif',
@@ -4626,14 +4626,14 @@ document.getElementById('endMonthCentroCusto').addEventListener('change', update
 
 
 
-// FunÃ§Ã£o para carregar dados da DRE customizada do Google Sheets
+// Função para carregar dados da DRE customizada do Google Sheets
 async function loadDREData() {
     const loadingDiv = document.getElementById('loadingDRE');
     const errorDiv   = document.getElementById('errorDRE');
     const tableDiv   = document.getElementById('tableDRE');
 
     if (!loadingDiv || !errorDiv || !tableDiv) {
-        console.error('Elementos DRE nÃ£o encontrados');
+        console.error('Elementos DRE não encontrados');
         return;
     }
 
@@ -4645,7 +4645,7 @@ async function loadDREData() {
         const startMonth = document.getElementById('startMonthDRE')?.value || '';
         const endMonth   = document.getElementById('endMonthDRE')?.value || '';
 
-        // Filtros mÃºltiplos
+        // Filtros múltiplos
         const statusFilter    = Array.from(document.getElementById('statusFilterDRE').selectedOptions).map(o => o.value).filter(v => v !== 'Todos');
         const costCenterFilter = Array.from(document.getElementById('costCenterFilterDRE').selectedOptions).map(o => o.value).filter(v => v !== 'Todos');
         const categoryFilter  = Array.from(document.getElementById('categoryFilterDRE').selectedOptions).map(o => o.value).filter(v => v !== 'Todas');
@@ -4665,7 +4665,7 @@ async function loadDREData() {
             return true;
         });
 
-        const meses = ['Janeiro','Fevereiro','MarÃ§o','Abril','Maio','Junho',
+        const meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho',
                        'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 
         const dreMensal = {};
@@ -4763,22 +4763,22 @@ function createCustomDRETable(meses, dreCalculado) {
     const estruturaDRE = [
         // A - RECEITA OPERACIONAL BRUTA
         { label: 'A - Receita Operacional Bruta', key: 'A', indent: 0, bold: true, bg: '#e8f5e9', isCalculation: true },
-        { label: '   3.01 Receita da Venda de Produtos e/ou ServiÃ§os', key: '3.01', indent: 1, bold: false, bg: 'transparent' },
+        { label: '   3.01 Receita da Venda de Produtos e/ou Serviços', key: '3.01', indent: 1, bold: false, bg: 'transparent' },
         
-        // B - DEDUÃ‡Ã•ES DA RECEITA BRUTA
-        { label: 'B - DeduÃ§Ãµes da Receita Bruta', key: 'B', indent: 0, bold: true, bg: '#ffebee', isCalculation: true },
+        // B - DEDUÇÕES DA RECEITA BRUTA
+        { label: 'B - Deduções da Receita Bruta', key: 'B', indent: 0, bold: true, bg: '#ffebee', isCalculation: true },
         { label: '   4.01 Abatimentos sobre Vendas', key: '4.01', indent: 1, bold: false, bg: 'transparent' },
-        { label: '   4.02 DevoluÃ§Ãµes de Vendas', key: '4.02', indent: 1, bold: false, bg: 'transparent' },
+        { label: '   4.02 Devoluções de Vendas', key: '4.02', indent: 1, bold: false, bg: 'transparent' },
         { label: '   4.03 Impostos sobre Vendas (ICMS, PIS, COFINS)', key: '4.03', indent: 1, bold: false, bg: 'transparent' },
         
-        // C - RECEITA OPERACIONAL LÃQUIDA
-        { label: 'C - Receita Operacional LÃ­quida (A - B)', key: 'C', indent: 0, bold: true, bg: '#e3f2fd', isCalculation: true },
+        // C - RECEITA OPERACIONAL LÍQUIDA
+        { label: 'C - Receita Operacional Líquida (A - B)', key: 'C', indent: 0, bold: true, bg: '#e3f2fd', isCalculation: true },
         
         // D - CUSTO DAS VENDAS
         { label: 'D - Custo das Vendas', key: 'D', indent: 0, bold: true, bg: '#ffebee', isCalculation: true },
         { label: '   5.01 Custo dos Produtos Vendidos (CPV)', key: '5.01', indent: 1, bold: false, bg: 'transparent' },
         { label: '   5.02 Custo das Mercadorias Vendidas (CMV)', key: '5.02', indent: 1, bold: false, bg: 'transparent' },
-        { label: '   5.03 Custo dos ServiÃ§os Prestados (CSP)', key: '5.03', indent: 1, bold: false, bg: 'transparent' },
+        { label: '   5.03 Custo dos Serviços Prestados (CSP)', key: '5.03', indent: 1, bold: false, bg: 'transparent' },
         
         // E - LUCRO BRUTO
         { label: 'E - Lucro Bruto (C - D)', key: 'E', indent: 0, bold: true, bg: '#e3f2fd', isCalculation: true },
@@ -4797,10 +4797,10 @@ function createCustomDRETable(meses, dreCalculado) {
         { label: '       6.04 Outras Receitas Operacionais', key: '6.04', indent: 2, bold: false, bg: 'transparent' },
         { label: '       6.05 Outras Despesas Operacionais / Diretoria', key: '6.05', indent: 2, bold: false, bg: 'transparent' },
         { label: '       6.06 Ativos', key: '6.06', indent: 2, bold: false, bg: 'transparent' },
-        { label: '       6.07 EmprÃ©stimos', key: '6.07', indent: 2, bold: false, bg: 'transparent' },
+        { label: '       6.07 Empréstimos', key: '6.07', indent: 2, bold: false, bg: 'transparent' },
         
-        // I - DESPESAS VARIÃVEIS
-        { label: '   I - VariÃ¡vel', key: 'I', indent: 1, bold: true, bg: '#fff3e0', isCalculation: true },
+        // I - DESPESAS VARIÁVEIS
+        { label: '   I - Variável', key: 'I', indent: 1, bold: true, bg: '#fff3e0', isCalculation: true },
         { label: '       7.01 Despesas Comerciais', key: '7.01', indent: 2, bold: false, bg: 'transparent' },
         { label: '       7.02 Despesas com Pessoal', key: '7.02', indent: 2, bold: false, bg: 'transparent' },
         { label: '       7.03 Despesas Administrativas', key: '7.03', indent: 2, bold: false, bg: 'transparent' },
@@ -4808,25 +4808,25 @@ function createCustomDRETable(meses, dreCalculado) {
         { label: '       7.05 Outras Despesas Operacionais', key: '7.05', indent: 2, bold: false, bg: 'transparent' },
         { label: '       7.06 Diretoria', key: '7.06', indent: 2, bold: false, bg: 'transparent' },
         { label: '       7.07 Ativos', key: '7.07', indent: 2, bold: false, bg: 'transparent' },
-        { label: '       7.08 EmprÃ©stimos', key: '7.08', indent: 2, bold: false, bg: 'transparent' },
+        { label: '       7.08 Empréstimos', key: '7.08', indent: 2, bold: false, bg: 'transparent' },
         
-        // J - OUTRAS RECEITAS E DESPESAS NÃƒO OPERACIONAIS
-        { label: 'J - Outras Rec./Desp. NÃ£o Operacionais (K - L)', key: 'J', indent: 0, bold: true, bg: '#f5f5f5', isCalculation: true },
+        // J - OUTRAS RECEITAS E DESPESAS NÃO OPERACIONAIS
+        { label: 'J - Outras Rec./Desp. Não Operacionais (K - L)', key: 'J', indent: 0, bold: true, bg: '#f5f5f5', isCalculation: true },
         
-        // K - OUTRAS RECEITAS NÃƒO OPERACIONAIS
-        { label: '   K - Outras Receitas NÃ£o Operacionais', key: 'K', indent: 1, bold: true, bg: '#f3e5f5', isCalculation: true },
+        // K - OUTRAS RECEITAS NÃO OPERACIONAIS
+        { label: '   K - Outras Receitas Não Operacionais', key: 'K', indent: 1, bold: true, bg: '#f3e5f5', isCalculation: true },
         { label: '       3.02 Diretoria', key: '3.02', indent: 2, bold: false, bg: 'transparent' },
         { label: '       3.03 Ativos', key: '3.03', indent: 2, bold: false, bg: 'transparent' },
-        { label: '       3.04 EmprÃ©stimos', key: '3.04', indent: 2, bold: false, bg: 'transparent' },
+        { label: '       3.04 Empréstimos', key: '3.04', indent: 2, bold: false, bg: 'transparent' },
         
-        // L - OUTRAS DESPESAS NÃƒO OPERACIONAIS
-        { label: '   L - Outras Despesas NÃ£o Operacionais', key: 'L', indent: 1, bold: true, bg: '#fce4ec', isCalculation: true },
+        // L - OUTRAS DESPESAS NÃO OPERACIONAIS
+        { label: '   L - Outras Despesas Não Operacionais', key: 'L', indent: 1, bold: true, bg: '#fce4ec', isCalculation: true },
         { label: '       8.03 Diretoria', key: '8.03', indent: 2, bold: false, bg: 'transparent' },
         { label: '       8.04 Ativos', key: '8.04', indent: 2, bold: false, bg: 'transparent' },
-        { label: '       8.05 EmprÃ©stimos', key: '8.05', indent: 2, bold: false, bg: 'transparent' },
+        { label: '       8.05 Empréstimos', key: '8.05', indent: 2, bold: false, bg: 'transparent' },
         
         // M - EBITDA
-        { label: 'M - (EBITDA) Lucro/PrejuÃ­zo Antes Resultado Financeiro e Impostos (E - G - J)', key: 'M', indent: 0, bold: true, bg: '#e3f2fd', isCalculation: true },
+        { label: 'M - (EBITDA) Lucro/Prejuízo Antes Resultado Financeiro e Impostos (E - G - J)', key: 'M', indent: 0, bold: true, bg: '#e3f2fd', isCalculation: true },
         
         // N - MARGEM EBITDA
         { label: 'N - Margem EBITDA ou Margem Operacional % (M / A)', key: 'N', indent: 0, bold: true, bg: '#f5f5f5', isCalculation: true, isPercent: true },
@@ -4839,19 +4839,19 @@ function createCustomDRETable(meses, dreCalculado) {
         // P - RESULTADO ANTES DOS IMPOSTOS
         { label: 'P - Resultado Antes dos Impostos sobre o Lucro (M + O)', key: 'P', indent: 0, bold: true, bg: '#e3f2fd', isCalculation: true },
         
-        // Q - PROVISÃƒO PARA IMPOSTOS
-        { label: 'Q - ProvisÃ£o para Impostos sobre o Lucro', key: 'Q', indent: 0, bold: true, bg: '#ffebee', isCalculation: true },
+        // Q - PROVISÃO PARA IMPOSTOS
+        { label: 'Q - Provisão para Impostos sobre o Lucro', key: 'Q', indent: 0, bold: true, bg: '#ffebee', isCalculation: true },
         { label: '   1.01 Imposto de Renda (IRPJ)', key: '1.01', indent: 1, bold: false, bg: 'transparent' },
-        { label: '   1.02 ContribuiÃ§Ã£o Social sobre o Lucro LÃ­quido (CSLL)', key: '1.02', indent: 1, bold: false, bg: 'transparent' },
+        { label: '   1.02 Contribuição Social sobre o Lucro Líquido (CSLL)', key: '1.02', indent: 1, bold: false, bg: 'transparent' },
         
-        // R - LUCRO LÃQUIDO
-        { label: 'R - Lucro (ou PrejuÃ­zo) LÃ­quido do PerÃ­odo (P - Q)', key: 'R', indent: 0, bold: true, bg: '#c8e6c9', isCalculation: true }
+        // R - LUCRO LÍQUIDO
+        { label: 'R - Lucro (ou Prejuízo) Líquido do Período (P - Q)', key: 'R', indent: 0, bold: true, bg: '#c8e6c9', isCalculation: true }
     ];
     
     // Renderizar tabela
     let html = '<table style="width: 100%; border-collapse: collapse; font-size: 0.85em;">';
     
-    // CabeÃ§alho
+    // Cabeçalho
     html += '<thead><tr style="background: #667eea; color: white;">';
     html += '<th style="padding: 12px; border: 1px solid #ddd; position: sticky; left: 0; background: #667eea; z-index: 2; min-width: 350px; text-align: left;">Categoria</th>';
     
@@ -4932,12 +4932,12 @@ html += `<td style="padding: 10px; padding-left: ${paddingLeft}px; border: 1px s
     const container = document.getElementById('tableDRE');
     if (container) {
         container.innerHTML = html;
-        // ForÃ§a fundo escuro na div pai (overflow-x: auto)
+        // Força fundo escuro na div pai (overflow-x: auto)
         const wrapper = container.closest('div[style*="overflow-x"]');
         if (wrapper) wrapper.style.background = 'rgba(15, 15, 35, 0.4)';
-        console.log('âœ… Tabela DRE renderizada com sucesso!');
+        console.log('✅ Tabela DRE renderizada com sucesso!');
     } else {
-        console.error('âŒ Elemento tableDRE nÃ£o encontrado');
+        console.error('❌ Elemento tableDRE não encontrado');
     }
 }
 
@@ -4948,7 +4948,7 @@ html += `<td style="padding: 10px; padding-left: ${paddingLeft}px; border: 1px s
 function exportDRE() {
     const table = document.getElementById('tableDRE');
     if (!table || !table.innerHTML) {
-        alert('NÃ£o hÃ¡ dados para exportar. Carregue os dados primeiro.');
+        alert('Não há dados para exportar. Carregue os dados primeiro.');
         return;
     }
     
@@ -4960,7 +4960,7 @@ function exportDRE() {
         const cols = row.querySelectorAll('th, td');
         const rowData = [];
         cols.forEach(col => {
-            // Remover formataÃ§Ã£o e pegar apenas o texto
+            // Remover formatação e pegar apenas o texto
             let text = col.textContent.trim();
             // Escapar aspas duplas
             text = text.replace(/"/g, '""');
@@ -4987,9 +4987,9 @@ function exportDRE() {
 
 
 function createDRETable(headers, data) {
-    const meses = ['Janeiro', 'Fevereiro', 'MarÃ§o', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+    const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
     
-    // Criar cabeÃ§alho
+    // Criar cabeçalho
     let html = '<thead><tr style="background: #667eea; color: white;">';
     html += '<th style="padding: 12px; border: 1px solid #ddd; position: sticky; left: 0; background: #667eea; z-index: 2; min-width: 250px; text-align: left;">Categoria</th>';
     
@@ -5013,17 +5013,17 @@ function createDRETable(headers, data) {
     const categoriasprincipais = [
         'Receitas Operacionais',
         'Receita Bruta de Vendas',
-        'DeduÃ§Ãµes da Receita Bruta',
-        'Receita LÃ­quida de Vendas',
+        'Deduções da Receita Bruta',
+        'Receita Líquida de Vendas',
         'Custos Operacionais',
         'Lucro Bruto',
         'Despesas Operacionais',
-        'Lucro / PrejuÃ­zo Operacional',
+        'Lucro / Prejuízo Operacional',
         'Receitas e Despesas Financeiras',
-        'Outras Receitas e Despesas NÃ£o Operacionais',
-        'Lucro / PrejuÃ­zo LÃ­quido',
-        'Despesas com Investimentos e EmprÃ©stimos',
-        'Lucro / PrejuÃ­zo Final'
+        'Outras Receitas e Despesas Não Operacionais',
+        'Lucro / Prejuízo Líquido',
+        'Despesas com Investimentos e Empréstimos',
+        'Lucro / Prejuízo Final'
     ];
     
     // Processar cada linha
@@ -5032,7 +5032,7 @@ function createDRETable(headers, data) {
         
         const categoria = row[0].trim();
         const isPrincipal = categoriasprincipais.includes(categoria);
-        const isLucro = categoria.includes('Lucro') || categoria.includes('PrejuÃ­zo');
+        const isLucro = categoria.includes('Lucro') || categoria.includes('Prejuízo');
         
         let bgColor = '#ffffff';
         let fontWeight = 'normal';
@@ -5048,7 +5048,7 @@ function createDRETable(headers, data) {
                 bgColor = '#e3f2fd';
             } else if (categoria.includes('Receita')) {
                 bgColor = '#e8f5e9';
-            } else if (categoria.includes('Despesa') || categoria.includes('Custo') || categoria.includes('DeduÃ§Ã£o')) {
+            } else if (categoria.includes('Despesa') || categoria.includes('Custo') || categoria.includes('Dedução')) {
                 bgColor = '#ffebee';
             } else {
                 bgColor = '#f5f5f5';
@@ -5067,7 +5067,7 @@ function createDRETable(headers, data) {
                 continue;
             }
             
-            // Converter valor brasileiro para nÃºmero
+            // Converter valor brasileiro para número
             const valorNumerico = parseBrazilianFloat(valor);
             
             let color = '#333';
@@ -5088,7 +5088,7 @@ function createDRETable(headers, data) {
     document.getElementById('tableDRE').innerHTML = html;
 }
 
-// Carregar DRE ao entrar na pÃ¡gina
+// Carregar DRE ao entrar na página
 function initDREPage() {
     if (!rawData || rawData.length === 0) {
         setTimeout(initDREPage, 500);
@@ -5099,7 +5099,7 @@ function initDREPage() {
 
 
 
-// VariÃ¡veis para Simulador
+// Variáveis para Simulador
 let simuladorRealData = {};
 let simuladorAjustes = {};
 
@@ -5127,17 +5127,17 @@ async function loadSimuladorData() {
         // Categorias principais que queremos
         const categoriasDesejadas = [
             'Receitas Operacionais',
-            'DeduÃ§Ãµes da Receita Bruta',
-            'Receita LÃ­quida de Vendas',
+            'Deduções da Receita Bruta',
+            'Receita Líquida de Vendas',
             'Custos Operacionais',
             'Lucro Bruto',
             'Despesas Operacionais',
-            'Lucro / PrejuÃ­zo Operacional',
+            'Lucro / Prejuízo Operacional',
             'Receitas e Despesas Financeiras',
-            'Outras Receitas e Despesas NÃ£o Operacionais',
-            'Lucro / PrejuÃ­zo LÃ­quido',
-            'Despesas com Investimentos e EmprÃ©stimos',
-            'Lucro / PrejuÃ­zo Final'
+            'Outras Receitas e Despesas Não Operacionais',
+            'Lucro / Prejuízo Líquido',
+            'Despesas com Investimentos e Empréstimos',
+            'Lucro / Prejuízo Final'
         ];
         
         simuladorRealData = {};
@@ -5233,7 +5233,7 @@ function updateSimuladorTable() {
     html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Categoria</th>';
     html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Real</th>';
     html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Simulado</th>';
-    html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">VariaÃ§Ã£o</th>';
+    html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Variação</th>';
     html += '</tr></thead><tbody>';
     
     Object.keys(simuladorRealData).forEach(categoria => {
@@ -5242,7 +5242,7 @@ function updateSimuladorTable() {
         const valorSimulado = valorReal * (1 + ajuste / 100);
         const variacao = valorSimulado - valorReal;
         
-        const isLucro = categoria.includes('Lucro') || categoria.includes('PrejuÃ­zo');
+        const isLucro = categoria.includes('Lucro') || categoria.includes('Prejuízo');
         const bgColor = isLucro ? '#e3f2fd' : '#f5f5f5';
         
         const colorReal = valorReal < 0 ? '#c62828' : (isLucro && valorReal > 0 ? '#2e7d32' : '#333');
@@ -5277,7 +5277,7 @@ function updateSimuladorChart() {
         type: 'bar',
         orientation: 'h',
         marker: { color: '#4facfe' },
-        text: valoresReais.map(v => formatCompactValue(v)),  // RÃ³tulos formatados
+        text: valoresReais.map(v => formatCompactValue(v)),  // Rótulos formatados
         textposition: 'auto',
         textfont: {
             family: 'Inter, sans-serif',
@@ -5293,7 +5293,7 @@ function updateSimuladorChart() {
         type: 'bar',
         orientation: 'h',
         marker: { color: '#667eea' },
-        text: valoresSimulados.map(v => formatCompactValue(v)),  // RÃ³tulos formatados
+        text: valoresSimulados.map(v => formatCompactValue(v)),  // Rótulos formatados
         textposition: 'auto',
         textfont: {
             family: 'Inter, sans-serif',
@@ -5339,8 +5339,8 @@ function initSimuladorPage() {
     loadSimuladorData();
 }
 
-// FunÃ§Ã£o para carregar dados dos Indicadores
-// FunÃ§Ã£o para carregar dados dos Indicadores DRE
+// Função para carregar dados dos Indicadores
+// Função para carregar dados dos Indicadores DRE
 function criarTabelaIndicadoresDRE(meses, dreCalculado) {
     // Filtra apenas meses com dados
     const mesesComDados = meses.filter(mes => dreCalculado[mes].A !== 0 || dreCalculado[mes].R !== 0);
@@ -5353,8 +5353,8 @@ function criarTabelaIndicadoresDRE(meses, dreCalculado) {
         { label: 'Margem EBITDA (%)',                     key: 'N',  isPercent: true  },
         { label: 'Despesas Operacionais (R$)',            key: 'G',  isPercent: false },
         { label: 'Despesas Operacionais (% Receita)',     key: '_DG', isPercent: true  },
-        { label: 'Lucro LÃ­quido (R$)',                    key: 'R',  isPercent: false },
-        { label: 'Margem LÃ­quida (%)',                    key: '_ML', isPercent: true  },
+        { label: 'Lucro Líquido (R$)',                    key: 'R',  isPercent: false },
+        { label: 'Margem Líquida (%)',                    key: '_ML', isPercent: true  },
         { label: 'Free Cash Flow (R$)',                   key: '_FCF',isPercent: false },
     ];
 
@@ -5365,7 +5365,7 @@ function criarTabelaIndicadoresDRE(meses, dreCalculado) {
         html += `<th style="padding:12px;border:1px solid rgba(255,255,255,0.1);text-align:right;min-width:130px;white-space:nowrap;">${mes.substring(0,3)}</th>`;
     });
 
-    html += '<th style="padding:12px;border:1px solid rgba(255,255,255,0.1);text-align:right;min-width:140px;background:#5a6fd8;font-weight:bold;">MÃ©dia/Total</th>';
+    html += '<th style="padding:12px;border:1px solid rgba(255,255,255,0.1);text-align:right;min-width:140px;background:#5a6fd8;font-weight:bold;">Média/Total</th>';
     html += '</tr></thead><tbody>';
 
     indicadores.forEach((ind, idx) => {
@@ -5400,7 +5400,7 @@ function criarTabelaIndicadoresDRE(meses, dreCalculado) {
             html += `<td style="padding:10px 12px;border:1px solid rgba(255,255,255,0.05);text-align:right;color:${color};font-weight:500;">${display}</td>`;
         });
 
-        // Coluna MÃ©dia/Total
+        // Coluna Média/Total
         const resumo = ind.isPercent ? (count > 0 ? soma / count : 0) : soma;
         const colorResumo = resumo < 0 ? '#f87171' : resumo > 0 ? '#4ade80' : '#94a3b8';
         const displayResumo = ind.isPercent ? resumo.toFixed(2) + '%' : formatCurrency(resumo);
@@ -5417,35 +5417,35 @@ function criarTabelaIndicadoresDRE(meses, dreCalculado) {
 function createIndicadoresTable(meses, dados) {
     const numMeses = meses.length;
     
-    // Calcular indicadores mÃªs a mÃªs
+    // Calcular indicadores mês a mês
     const indicadores = {
-        'Margem LÃ­quida (%)': [],
-        'Ponto de EquilÃ­brio (R$)': [],
+        'Margem Líquida (%)': [],
+        'Ponto de Equilíbrio (R$)': [],
         'Margem EBIT (%)': [],
         'Despesa Fixa / Receita Operacional (%)': [],
-        'Despesa VariÃ¡vel / Receita Operacional (%)': [],
-        'Margem de ContribuiÃ§Ã£o / Margem Bruta (%)': [],
-        'Margem de ContribuiÃ§Ã£o $ (R$)': []
+        'Despesa Variável / Receita Operacional (%)': [],
+        'Margem de Contribuição / Margem Bruta (%)': [],
+        'Margem de Contribuição $ (R$)': []
     };
     
     for (let i = 0; i < numMeses; i++) {
         const receitasOp = dados['Receitas Operacionais'][i];
-        const deducoes = Math.abs(dados['DeduÃ§Ãµes da Receita Bruta'][i]);
+        const deducoes = Math.abs(dados['Deduções da Receita Bruta'][i]);
         const custos = Math.abs(dados['Custos Operacionais'][i]);
         const despesasOp = Math.abs(dados['Despesas Operacionais'][i]);
         const financeiras = Math.abs(dados['Receitas e Despesas Financeiras'][i]);
-        const investimentos = Math.abs(dados['Despesas com Investimentos e EmprÃ©stimos'][i]);
-        const lucroFinal = dados['Lucro / PrejuÃ­zo Final'][i];
+        const investimentos = Math.abs(dados['Despesas com Investimentos e Empréstimos'][i]);
+        const lucroFinal = dados['Lucro / Prejuízo Final'][i];
         
-        // Margem LÃ­quida = Lucro Final / Receitas Operacionais
+        // Margem Líquida = Lucro Final / Receitas Operacionais
         const margemLiquida = receitasOp !== 0 ? (lucroFinal / receitasOp) * 100 : 0;
-        indicadores['Margem LÃ­quida (%)'].push(margemLiquida);
+        indicadores['Margem Líquida (%)'].push(margemLiquida);
         
-        // Ponto de EquilÃ­brio = soma de todas as despesas
+        // Ponto de Equilíbrio = soma de todas as despesas
         const pontoEquilibrio = deducoes + custos + despesasOp + financeiras + investimentos;
-        indicadores['Ponto de EquilÃ­brio (R$)'].push(pontoEquilibrio);
+        indicadores['Ponto de Equilíbrio (R$)'].push(pontoEquilibrio);
         
-        // Margem EBIT = (Receitas Op - DeduÃ§Ãµes - Custos - Despesas Op) / Receitas Op
+        // Margem EBIT = (Receitas Op - Deduções - Custos - Despesas Op) / Receitas Op
         const margemEBIT = receitasOp !== 0 ? ((receitasOp - deducoes - custos - despesasOp) / receitasOp) * 100 : 0;
         indicadores['Margem EBIT (%)'].push(margemEBIT);
         
@@ -5453,17 +5453,17 @@ function createIndicadoresTable(meses, dados) {
         const despesaFixa = receitasOp !== 0 ? ((despesasOp + financeiras + investimentos) / receitasOp) * 100 : 0;
         indicadores['Despesa Fixa / Receita Operacional (%)'].push(despesaFixa);
         
-        // Despesa VariÃ¡vel / Receita Operacional
+        // Despesa Variável / Receita Operacional
         const despesaVariavel = receitasOp !== 0 ? ((deducoes + custos) / receitasOp) * 100 : 0;
-        indicadores['Despesa VariÃ¡vel / Receita Operacional (%)'].push(despesaVariavel);
+        indicadores['Despesa Variável / Receita Operacional (%)'].push(despesaVariavel);
         
-        // Margem de ContribuiÃ§Ã£o / Margem Bruta
+        // Margem de Contribuição / Margem Bruta
         const margemContribuicao = receitasOp !== 0 ? (1 - ((deducoes + custos) / receitasOp)) * 100 : 0;
-        indicadores['Margem de ContribuiÃ§Ã£o / Margem Bruta (%)'].push(margemContribuicao);
+        indicadores['Margem de Contribuição / Margem Bruta (%)'].push(margemContribuicao);
         
-        // Margem de ContribuiÃ§Ã£o $
+        // Margem de Contribuição $
         const margemContribuicaoDolar = receitasOp !== 0 ? (1 - ((deducoes + custos) / receitasOp)) * receitasOp : 0;
-        indicadores['Margem de ContribuiÃ§Ã£o $ (R$)'].push(margemContribuicaoDolar);
+        indicadores['Margem de Contribuição $ (R$)'].push(margemContribuicaoDolar);
     }
     
     // Criar tabela HTML
@@ -5474,7 +5474,7 @@ function createIndicadoresTable(meses, dados) {
         html += `<th style="padding: 12px; border: 1px solid #ddd; text-align: right; min-width: 120px; white-space: nowrap;">${mes}</th>`;
     });
     
-    html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: right; min-width: 120px; background: #5a6fd8; font-weight: bold;">MÃ©dia</th>';
+    html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: right; min-width: 120px; background: #5a6fd8; font-weight: bold;">Média</th>';
     html += '<th style="padding: 12px; border: 1px solid #ddd; text-align: right; min-width: 120px; background: #5a6fd8; font-weight: bold;">Total</th>';
     html += '</tr></thead><tbody>';
     
@@ -5504,7 +5504,7 @@ function createIndicadoresTable(meses, dados) {
             html += `<td style="padding: 10px 12px; border: 1px solid #ddd; text-align: right; color: ${color}; font-weight: 500;">${displayValue}</td>`;
         });
         
-        // Calcular mÃ©dia
+        // Calcular média
         const media = count > 0 ? soma / count : 0;
         const colorMedia = media < 0 ? '#c62828' : (media > 0 ? '#2e7d32' : '#666');
         const displayMedia = isPercentual ? 
@@ -5513,7 +5513,7 @@ function createIndicadoresTable(meses, dados) {
         
         html += `<td style="padding: 10px 12px; border: 1px solid #ddd; text-align: right; background: #e3f2fd; color: ${colorMedia}; font-weight: bold;">${displayMedia}</td>`;
         
-        // Total (soma ou mÃ©dia dependendo do indicador)
+        // Total (soma ou média dependendo do indicador)
         const total = isPercentual ? media : soma;
         const colorTotal = total < 0 ? '#c62828' : (total > 0 ? '#2e7d32' : '#666');
         const displayTotal = isPercentual ? 
@@ -5529,7 +5529,7 @@ function createIndicadoresTable(meses, dados) {
     document.getElementById('tableIndicadores').innerHTML = html;
 }
 
-// VariÃ¡vel para armazenar instÃ¢ncias dos grÃ¡ficos
+// Variável para armazenar instâncias dos gráficos
 let chartInstances = {
     trimestre: null,
     mes: null,
@@ -5537,7 +5537,7 @@ let chartInstances = {
     freeCashFlow: null
 };
 
-// FunÃ§Ã£o principal para carregar todos os indicadores
+// Função principal para carregar todos os indicadores
 async function loadAllIndicadores() {
     const yearSelect = document.getElementById('yearSelectIndicadores');
     if (!yearSelect) return;
@@ -5554,14 +5554,14 @@ async function loadAllIndicadores() {
     tableDiv.style.display = 'none';
 
     try {
-        // âœ… MESMA LÃ“GICA DO loadDREData
+        // ✅ MESMA LÓGICA DO loadDREData
         const dadosAno = rawData.filter(row => {
             const dateField = row.lastAcquittanceDate || row.dueDate || row['financialEvent.competenceDate'];
             if (!dateField) return false;
             return dateField.startsWith(year);
         });
 
-        const meses = ['Janeiro','Fevereiro','MarÃ§o','Abril','Maio','Junho',
+        const meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho',
                        'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 
         const dreMensal = {};
@@ -5633,7 +5633,7 @@ async function loadAllIndicadores() {
             d.R = d.P - d.Q;
         });
 
-        // GrÃ¡ficos
+        // Gráficos
         criarGraficoSaldoMes(meses, dreCalculado, year);
         criarGraficoSaldoTrimestre(meses, dreCalculado, year);
         criarGraficoRunwayIndicadores(meses, dreCalculado);
@@ -5880,7 +5880,7 @@ function criarGraficoFreeCashFlowIndicadores(meses, dreCalculado) {
 }
 
 
-// FunÃ§Ã£o para inicializar pÃ¡gina de indicadores
+// Função para inicializar página de indicadores
 function initIndicadoresPage() {
     loadAllIndicadores();
 }
@@ -5896,15 +5896,15 @@ function populateFiltersSimFluxo() {
   rawData.forEach(row => {
     if (row.status) statusSet.add(row.status);
     
-    // ALTERADO: usar notaÃ§Ã£o de string ao invÃ©s de objeto
+    // ALTERADO: usar notação de string ao invés de objeto
     const costCenter = row['Centro_de_Custo_Unificado'];
     if (costCenter) costCenterSet.add(costCenter);
     
-    // ALTERADO: usar notaÃ§Ã£o de string ao invÃ©s de objeto
+    // ALTERADO: usar notação de string ao invés de objeto
     const category = row['categoriesRatio.category'];
     if (category) categorySet.add(category);
     
-    // ALTERADO: usar notaÃ§Ã£o de string ao invÃ©s de objeto
+    // ALTERADO: usar notação de string ao invés de objeto
     const negotiator = row['financialEvent.negotiator.name'];
     if (negotiator) negotiatorSet.add(negotiator);
   });
@@ -5927,13 +5927,13 @@ function getFilteredDataSimFluxo() {
   return rawData.filter(row => {
     if (statusFilter.length > 0 && !statusFilter.includes(row.status)) return false;
     
-    // ALTERADO: usar notaÃ§Ã£o de string ao invÃ©s de objeto
+    // ALTERADO: usar notação de string ao invés de objeto
     if (costCenterFilter.length > 0 && !costCenterFilter.includes(row['Centro_de_Custo_Unificado'])) return false;
     
-    // ALTERADO: usar notaÃ§Ã£o de string ao invÃ©s de objeto
+    // ALTERADO: usar notação de string ao invés de objeto
     if (categoryFilter.length > 0 && !categoryFilter.includes(row['categoriesRatio.category'])) return false;
     
-    // ALTERADO: usar notaÃ§Ã£o de string ao invÃ©s de objeto
+    // ALTERADO: usar notação de string ao invés de objeto
     if (negotiatorFilter.length > 0 && !negotiatorFilter.includes(row['financialEvent.negotiator.name'])) return false;
     
     const dateToCheck = getDateForRow(row, currentDateTypeSimFluxo);
@@ -6037,9 +6037,9 @@ function buildSimuladorFluxoTable(data) {
   let despesaTotalReal = 0;
   let despesaTotalSimulado = 0;
 
-  // SEÃ‡ÃƒO RECEITAS
+  // SEÇÃO RECEITAS
   html += '<tr style="background: #e8f5e9;">';
-  html += `<td colspan="${sortedMonths.length * 3 + 3}" style="padding: 10px; border: 1px solid #ddd; font-weight: bold; color: #2e7d32;">ðŸ“ˆ CONTAS A RECEBER</td>`;
+  html += `<td colspan="${sortedMonths.length * 3 + 3}" style="padding: 10px; border: 1px solid #ddd; font-weight: bold; color: #2e7d32;">📈 CONTAS A RECEBER</td>`;
   html += '</tr>';
 
   sortedCategorias.forEach(categoria => {
@@ -6093,9 +6093,9 @@ function buildSimuladorFluxoTable(data) {
     }
   });
 
-  // SEÃ‡ÃƒO DESPESAS
+  // SEÇÃO DESPESAS
   html += '<tr style="background: #ffebee;">';
-  html += `<td colspan="${sortedMonths.length * 3 + 3}" style="padding: 10px; border: 1px solid #ddd; font-weight: bold; color: #c62828;">ðŸ“‰ A PAGAR</td>`;
+  html += `<td colspan="${sortedMonths.length * 3 + 3}" style="padding: 10px; border: 1px solid #ddd; font-weight: bold; color: #c62828;">📉 A PAGAR</td>`;
   html += '</tr>';
 
   sortedCategorias.forEach(categoria => {
@@ -6149,7 +6149,7 @@ function buildSimuladorFluxoTable(data) {
     }
   });
 
-  // Totais mensais e percentual por mÃªs
+  // Totais mensais e percentual por mês
   const totalReceitaPorMes = {};
   const totalDespesaPorMes = {};
   const resultadoLiquidoPorMes = {};
@@ -6220,9 +6220,9 @@ function buildSimuladorFluxoTable(data) {
   rowTotalDespesa += `<td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: #c62828;">${formatCurrency(despesaTotalSimulado)}</td>`;
   rowTotalDespesa += `<td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: ${corTotalDespesa};">${percTotalDespesa.toFixed(1)}%</td></tr>`;
 
-  // Linha Resultado lÃ­quido mensal
+  // Linha Resultado líquido mensal
   let rowResultadoLiquido = `<tr style="background: #d1ffd1; font-weight: bold;">
-  <td colspan="2" style="padding: 12px; border: 1px solid #ddd; text-align: right;">TOTAL DO PERÃODO</td>`;
+  <td colspan="2" style="padding: 12px; border: 1px solid #ddd; text-align: right;">TOTAL DO PERÍODO</td>`;
 
   sortedMonths.forEach(month => {
     const valReal = sortedCategorias.reduce((acc, cat) => {
@@ -6267,7 +6267,7 @@ function buildSimuladorFluxoTable(data) {
 
 
 
-// FunÃ§Ã£o para editar cÃ©lula de RECEITA
+// Função para editar célula de RECEITA
 function editCellSimFluxoReceita(key, currentValue, cell) {
   const novoValor = prompt(
     `Editar A RECEBER\n\nValor atual: ${formatCurrency(currentValue)}\n\nDigite o novo valor:`,
@@ -6279,11 +6279,11 @@ function editCellSimFluxoReceita(key, currentValue, cell) {
   const novoValorNum = parseFloat(novoValor.replace(',', '.'));
   
   if (isNaN(novoValorNum)) {
-    alert('Valor invÃ¡lido!');
+    alert('Valor inválido!');
     return;
   }
   
-  // âœ… CORREÃ‡ÃƒO: garantir que o objeto existe antes de aplicar spread
+  // ✅ CORREÇÃO: garantir que o objeto existe antes de aplicar spread
   if (!simuladorFluxoEditedData[key]) {
     simuladorFluxoEditedData[key] = {};
   }
@@ -6291,7 +6291,7 @@ function editCellSimFluxoReceita(key, currentValue, cell) {
   // Atualizar apenas receita, preservando despesa se existir
   simuladorFluxoEditedData[key].receita = novoValorNum;
   
-  // Atualizar cÃ©lula visualmente
+  // Atualizar célula visualmente
   cell.style.color = '#2e7d32';
   cell.style.fontWeight = 'bold';
   cell.style.background = '#fffde7';
@@ -6310,9 +6310,9 @@ function editCellSimFluxoReceita(key, currentValue, cell) {
 
 
 
-// FunÃ§Ã£o para editar cÃ©lula de DESPESA
-// FunÃ§Ã£o para editar cÃ©lula de DESPESA
-// FunÃ§Ã£o para editar cÃ©lula de DESPESA
+// Função para editar célula de DESPESA
+// Função para editar célula de DESPESA
+// Função para editar célula de DESPESA
 function editCellSimFluxoDespesa(key, currentValue, cell) {
   const novoValor = prompt(
     `Editar A Pagar\n\nValor atual: ${formatCurrency(currentValue)}\n\nDigite o novo valor:`,
@@ -6324,11 +6324,11 @@ function editCellSimFluxoDespesa(key, currentValue, cell) {
   const novoValorNum = parseFloat(novoValor.replace(',', '.'));
   
   if (isNaN(novoValorNum)) {
-    alert('Valor invÃ¡lido!');
+    alert('Valor inválido!');
     return;
   }
   
-  // âœ… CORREÃ‡ÃƒO: garantir que o objeto existe antes de aplicar spread
+  // ✅ CORREÇÃO: garantir que o objeto existe antes de aplicar spread
   if (!simuladorFluxoEditedData[key]) {
     simuladorFluxoEditedData[key] = {};
   }
@@ -6336,7 +6336,7 @@ function editCellSimFluxoDespesa(key, currentValue, cell) {
   // Atualizar apenas despesa, preservando receita se existir
   simuladorFluxoEditedData[key].despesa = novoValorNum;
   
-  // Atualizar cÃ©lula visualmente
+  // Atualizar célula visualmente
   cell.style.color = '#c62828';
   cell.style.fontWeight = 'bold';
   cell.style.background = '#fffde7';
@@ -6369,12 +6369,12 @@ function editCellSimFluxo(uniqueKey, currentReceita, currentDespesa, cell) {
   const novoSaldo = parseFloat(novoValor.replace(',', '.'));
   
   if (isNaN(novoSaldo)) {
-    alert('Valor invÃ¡lido!');
+    alert('Valor inválido!');
     return;
   }
   
-  // Ajustar receita ou despesa mantendo a proporÃ§Ã£o
-  // Se novo saldo Ã© positivo, ajustar receita; se negativo, ajustar despesa
+  // Ajustar receita ou despesa mantendo a proporção
+  // Se novo saldo é positivo, ajustar receita; se negativo, ajustar despesa
   let novaReceita = currentReceita;
   let novaDespesa = currentDespesa;
   
@@ -6394,7 +6394,7 @@ function editCellSimFluxo(uniqueKey, currentReceita, currentDespesa, cell) {
     despesa: novaDespesa
   };
   
-  // Atualizar cÃ©lula
+  // Atualizar célula
   const color = novoSaldo >= 0 ? '#2e7d32' : '#d32f2f';
   cell.style.color = color;
   cell.style.fontWeight = 'bold';
@@ -6415,7 +6415,7 @@ function editCellSimFluxo(uniqueKey, currentReceita, currentDespesa, cell) {
 function buildSimuladorConsolidadoTables() {
     const filteredData = getFilteredDataSimFluxo();
     
-    // Estrutura: { "mÃªs": { categoria: { receita, despesa } } }
+    // Estrutura: { "mês": { categoria: { receita, despesa } } }
     const dadosPorMes = {};
     
     filteredData.forEach(row => {
@@ -6437,7 +6437,7 @@ function buildSimuladorConsolidadoTables() {
             dadosPorMes[monthKey][categoria] = { receita: 0, despesa: 0 };
         }
         
-        // Somar valores (cada row.total sÃ³ deve ser contado UMA vez)
+        // Somar valores (cada row.total só deve ser contado UMA vez)
         if (tipo === "Receita") {
             dadosPorMes[monthKey][categoria].receita += (row.total || 0);
         } else if (tipo === "Despesa") {
@@ -6445,7 +6445,7 @@ function buildSimuladorConsolidadoTables() {
         }
     });
     
-    // Agora agregar por mÃªs para as tabelas consolidadas
+    // Agora agregar por mês para as tabelas consolidadas
     const receitaRealPorMes = {};
     const receitaSimPorMes = {};
     const despesaRealPorMes = {};
@@ -6468,7 +6468,7 @@ function buildSimuladorConsolidadoTables() {
             receitaRealPorMes[monthKey] += receitaReal;
             despesaRealPorMes[monthKey] += despesaReal;
             
-            // Simulado (usa editado se existir, senÃ£o usa real)
+            // Simulado (usa editado se existir, senão usa real)
             const receitaSim = simuladorFluxoEditedData[keyReceita]?.receita ?? receitaReal;
             const despesaSim = simuladorFluxoEditedData[keyDespesa]?.despesa ?? despesaReal;
             
@@ -6481,7 +6481,7 @@ function buildSimuladorConsolidadoTables() {
     
     // ===== TABELA CONSOLIDADO DE RECEITAS =====
     let htmlReceita = `<thead><tr style="background: #4facfe; color: white;">`;
-    htmlReceita += `<th style="padding: 12px; border: 1px solid #ddd; text-align: left;">MÃªs</th>`;
+    htmlReceita += `<th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Mês</th>`;
     htmlReceita += `<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Real</th>`;
     htmlReceita += `<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Sim.</th>`;
     htmlReceita += `<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">%</th>`;
@@ -6511,7 +6511,7 @@ function buildSimuladorConsolidadoTables() {
             htmlReceita += `</tr>`;
         });
     } else {
-        htmlReceita += `<tr><td colspan="4" style="padding: 20px; text-align: center; color: #999;">Nenhum dado disponÃ­vel</td></tr>`;
+        htmlReceita += `<tr><td colspan="4" style="padding: 20px; text-align: center; color: #999;">Nenhum dado disponível</td></tr>`;
     }
     
     const variacaoReceitaTotal = totalReceitaReal !== 0 ? ((totalReceitaSim - totalReceitaReal) / totalReceitaReal) * 100 : 0;
@@ -6529,7 +6529,7 @@ function buildSimuladorConsolidadoTables() {
     
     // ===== TABELA CONSOLIDADO DE DESPESAS =====
     let htmlDespesa = `<thead><tr style="background: #f5576c; color: white;">`;
-    htmlDespesa += `<th style="padding: 12px; border: 1px solid #ddd; text-align: left;">MÃªs</th>`;
+    htmlDespesa += `<th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Mês</th>`;
     htmlDespesa += `<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Real</th>`;
     htmlDespesa += `<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Sim.</th>`;
     htmlDespesa += `<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">%</th>`;
@@ -6559,7 +6559,7 @@ function buildSimuladorConsolidadoTables() {
             htmlDespesa += `</tr>`;
         });
     } else {
-        htmlDespesa += `<tr><td colspan="4" style="padding: 20px; text-align: center; color: #999;">Nenhum dado disponÃ­vel</td></tr>`;
+        htmlDespesa += `<tr><td colspan="4" style="padding: 20px; text-align: center; color: #999;">Nenhum dado disponível</td></tr>`;
     }
     
     const variacaoDespesaTotal = totalDespesaReal !== 0 ? ((totalDespesaSim - totalDespesaReal) / totalDespesaReal) * 100 : 0;
@@ -6575,19 +6575,19 @@ function buildSimuladorConsolidadoTables() {
     
     document.getElementById('tableSimuladorDespesaConsolidado').innerHTML = htmlDespesa;
     
-    // ===== TABELA RESULTADO LÃQUIDO (usando dados jÃ¡ calculados) =====
+    // ===== TABELA RESULTADO LÍQUIDO (usando dados já calculados) =====
     buildSimuladorConsolidadoResultadoLiquido(receitaRealPorMes, receitaSimPorMes, despesaRealPorMes, despesaSimPorMes);
 }
 
-// Nova assinatura da funÃ§Ã£o com parÃ¢metros
+// Nova assinatura da função com parâmetros
 
 
-// Nova assinatura da funÃ§Ã£o com parÃ¢metros
+// Nova assinatura da função com parâmetros
 function buildSimuladorConsolidadoResultadoLiquido(receitaRealPorMes, receitaSimPorMes, despesaRealPorMes, despesaSimPorMes) {
     const sortedMonths = Object.keys(receitaRealPorMes).sort();
     
     let html = `<thead><tr style="background: #7b4397; color: white;">`;
-    html += `<th style="padding: 12px; border: 1px solid #ddd; text-align: left;">MÃªs</th>`;
+    html += `<th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Mês</th>`;
     html += `<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Real</th>`;
     html += `<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Sim.</th>`;
     html += `<th style="padding: 12px; border: 1px solid #ddd; text-align: right;">%</th>`;
@@ -6600,13 +6600,13 @@ function buildSimuladorConsolidadoResultadoLiquido(receitaRealPorMes, receitaSim
         sortedMonths.forEach(mesAno => {
             const [ano, mes] = mesAno.split('-');
             
-            // CORREÃ‡ÃƒO: Usar os parÃ¢metros recebidos diretamente
+            // CORREÇÃO: Usar os parâmetros recebidos diretamente
             const receitaReal = receitaRealPorMes[mesAno] || 0;
             const receitaSim = receitaSimPorMes[mesAno] || 0;
             const despesaReal = despesaRealPorMes[mesAno] || 0;
             const despesaSim = despesaSimPorMes[mesAno] || 0;
             
-            // Calcular resultado lÃ­quido
+            // Calcular resultado líquido
             const real = receitaReal - despesaReal;
             const sim = receitaSim - despesaSim;
             
@@ -6628,7 +6628,7 @@ function buildSimuladorConsolidadoResultadoLiquido(receitaRealPorMes, receitaSim
             html += `</tr>`;
         });
     } else {
-        html += `<tr><td colspan="4" style="padding:20px; text-align:center; color:#999;">Nenhum dado disponÃ­vel</td></tr>`;
+        html += `<tr><td colspan="4" style="padding:20px; text-align:center; color:#999;">Nenhum dado disponível</td></tr>`;
     }
     
     // Total
@@ -6637,7 +6637,7 @@ function buildSimuladorConsolidadoResultadoLiquido(receitaRealPorMes, receitaSim
     const signTotalVar = variacaoTotal >= 0 ? '+' : '';
     
     html += `<tr style="background: #e1bee7; font-weight: bold;">`;
-    html += `<td style="padding: 12px; border: 1px solid #ddd; text-align: left;">TOTAL DO PERÃODO</td>`;
+    html += `<td style="padding: 12px; border: 1px solid #ddd; text-align: left;">TOTAL DO PERÍODO</td>`;
     html += `<td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: ${totalResultadoReal >= 0 ? '#1b5e20' : '#b71c1c'}; font-size: 1.1em;">${formatCurrency(totalResultadoReal)}</td>`;
     html += `<td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: ${totalResultadoSim >= 0 ? '#1b5e20' : '#b71c1c'}; font-size: 1.1em;">${formatCurrency(totalResultadoSim)}</td>`;
     html += `<td style="padding: 12px; border: 1px solid #ddd; text-align: right; color: ${colorTotalVar}; font-size: 1.1em;">${signTotalVar}${variacaoTotal.toFixed(2)}%</td>`;
@@ -6666,7 +6666,7 @@ function exportSimuladorFluxo() {
   const table = document.getElementById('tableSimuladorFluxoDetalhado');
   let csvContent = '';
   
-  // ===== CONSTRUIR CABEÃ‡ALHO MANUALMENTE EM 2 LINHAS =====
+  // ===== CONSTRUIR CABEÇALHO MANUALMENTE EM 2 LINHAS =====
   const headerRow1 = table.querySelector('thead tr:first-child');
   const monthHeaders = [];
   
@@ -6683,7 +6683,7 @@ function exportSimuladorFluxo() {
     }
   });
   
-  // LINHA 1 do cabeÃ§alho
+  // LINHA 1 do cabeçalho
   let line1 = [];
   monthHeaders.forEach(h => {
     line1.push(h.text);
@@ -6693,7 +6693,7 @@ function exportSimuladorFluxo() {
   });
   csvContent += line1.join(';') + '\n';
   
-  // LINHA 2 do cabeÃ§alho
+  // LINHA 2 do cabeçalho
   let line2 = [];
   monthHeaders.forEach(h => {
     if (h.isMonth) {
@@ -6710,20 +6710,20 @@ function exportSimuladorFluxo() {
   table.querySelectorAll('tbody tr').forEach(tr => {
     const row = [];
     
-    // Verificar se Ã© linha de TOTAL (tem colspan)
+    // Verificar se é linha de TOTAL (tem colspan)
     const firstCell = tr.querySelector('td');
     const hasColspan = firstCell && parseInt(firstCell.getAttribute('colspan')) > 1;
     
     if (hasColspan) {
-      // Ã‰ linha de TOTAL - adicionar cÃ©lula vazia para compensar o colspan
+      // É linha de TOTAL - adicionar célula vazia para compensar o colspan
       const totalText = firstCell.textContent.trim().replace(/R\$\s*/g, '').replace(/\./g, '');
-      row.push(''); // CÃ©lula vazia para "Tipo"
+      row.push(''); // Célula vazia para "Tipo"
       row.push(totalText); // Texto do total em "Categoria"
       
-      // Pegar os valores restantes (Real, Sim., % de cada mÃªs)
+      // Pegar os valores restantes (Real, Sim., % de cada mês)
       tr.querySelectorAll('td:not(:first-child)').forEach(td => {
         let value = td.textContent.trim();
-        // Remove R$ e pontos (separador de milhar), MANTÃ‰M vÃ­rgula decimal
+        // Remove R$ e pontos (separador de milhar), MANTÉM vírgula decimal
         value = value.replace(/R\$\s*/g, '').replace(/\./g, '');
         row.push(value);
       });
@@ -6731,7 +6731,7 @@ function exportSimuladorFluxo() {
       // Linha normal de categoria
       tr.querySelectorAll('td').forEach(td => {
         let value = td.textContent.trim();
-        // Remove R$ e pontos (separador de milhar), MANTÃ‰M vÃ­rgula decimal
+        // Remove R$ e pontos (separador de milhar), MANTÉM vírgula decimal
         value = value.replace(/R\$\s*/g, '').replace(/\./g, '');
         row.push(value);
       });
@@ -6753,24 +6753,24 @@ function exportSimuladorFluxo() {
 }
 
 
-// ========== FUNÃ‡Ã•ES DE EXPORTAÃ‡ÃƒO CSV ==========
+// ========== FUNÇÕES DE EXPORTAÇÃO CSV ==========
 
 // 1. Exportar Fluxo de Caixa Detalhado por Categoria
-// ========== FUNÃ‡Ã•ES DE EXPORTAÃ‡ÃƒO CSV (CORRIGIDAS) ==========
+// ========== FUNÇÕES DE EXPORTAÇÃO CSV (CORRIGIDAS) ==========
 
 // 1. Exportar Fluxo de Caixa Detalhado por Categoria
 // 1. Exportar Fluxo de Caixa Detalhado por Categoria
 function exportFluxoDetalhado() {
     const table = document.getElementById('tableFluxoDetalhado');
     if (!table) {
-        alert('Tabela nÃ£o encontrada!');
+        alert('Tabela não encontrada!');
         return;
     }
     
     let csvContent = "";
     const BOM = "\uFEFF";
     
-    // CABEÃ‡ALHO - Primeira linha (Tipo, Categoria, e Meses)
+    // CABEÇALHO - Primeira linha (Tipo, Categoria, e Meses)
     const headerRow1 = table.querySelector('thead tr:first-child');
     if (headerRow1) {
         let line1 = [];
@@ -6785,7 +6785,7 @@ function exportFluxoDetalhado() {
         csvContent += line1.join(";") + "\n";
     }
     
-    // CABEÃ‡ALHO - Segunda linha (Real, Simulado, %)
+    // CABEÇALHO - Segunda linha (Real, Simulado, %)
     const headerRow2 = table.querySelector('thead tr:nth-child(2)');
     if (headerRow2) {
         let line2 = [];
@@ -6801,7 +6801,7 @@ function exportFluxoDetalhado() {
     table.querySelectorAll('tbody tr').forEach(tr => {
         let row = [];
         
-        // Verificar se Ã© uma linha de total (TOTAL RECEITAS, TOTAL DESPESAS, RESULTADO LÃQUIDO)
+        // Verificar se é uma linha de total (TOTAL RECEITAS, TOTAL DESPESAS, RESULTADO LÍQUIDO)
         const firstCell = tr.querySelector('td');
         if (firstCell && firstCell.hasAttribute('colspan')) {
             const colspan = parseInt(firstCell.getAttribute('colspan'));
@@ -6809,20 +6809,20 @@ function exportFluxoDetalhado() {
             
             // Se colspan = 2, significa que ocupa as colunas "Tipo" e "Categoria"
             if (colspan === 2) {
-                // Adicionar cÃ©lula vazia para "Tipo"
+                // Adicionar célula vazia para "Tipo"
                 row.push('""');
-                // Adicionar o texto na cÃ©lula "Categoria"
+                // Adicionar o texto na célula "Categoria"
                 let cleanText = text.replace(/\u00A0/g, " ");
                 cleanText = cleanText.replace(/R\$/g, "").replace(/\./g, "").replace(/%/g, "");
                 cleanText = cleanText.replace(/"/g, '""');
                 row.push('"' + cleanText + '"');
                 
-                // Processar as outras cÃ©lulas normalmente
+                // Processar as outras células normalmente
                 let skipFirst = true;
                 tr.querySelectorAll('td').forEach(td => {
                     if (skipFirst) {
                         skipFirst = false;
-                        return; // Pula a primeira cÃ©lula (jÃ¡ processada)
+                        return; // Pula a primeira célula (já processada)
                     }
                     let value = td.textContent.trim();
                     value = value.replace(/\u00A0/g, " ");
@@ -6870,14 +6870,14 @@ function exportFluxoDetalhado() {
 function exportSaldoCentroCusto() {
     const table = document.getElementById('tableSaldoCentroCusto');
     if (!table) {
-        alert('Tabela nÃ£o encontrada!');
+        alert('Tabela não encontrada!');
         return;
     }
     
     let csvContent = "";
     const BOM = "\uFEFF";
     
-    // CABEÃ‡ALHO
+    // CABEÇALHO
     const headers = table.querySelectorAll("thead tr th");
     let headerRow = [];
     headers.forEach(th => {
@@ -6885,7 +6885,7 @@ function exportSaldoCentroCusto() {
         text = text.replace(/"/g, '""');
         headerRow.push('"' + text + '"');
     });
-    csvContent += headerRow.join(";") + "\n";  // â† MUDANÃ‡A AQUI
+    csvContent += headerRow.join(";") + "\n";  // ← MUDANÇA AQUI
     
     // DADOS
     table.querySelectorAll("tbody tr").forEach(tr => {
@@ -6898,7 +6898,7 @@ function exportSaldoCentroCusto() {
             row.push('"' + value + '"');
         });
         if (row.length > 0) {
-            csvContent += row.join(";") + "\n";  // â† MUDANÃ‡A AQUI
+            csvContent += row.join(";") + "\n";  // ← MUDANÇA AQUI
         }
     });
     
@@ -6915,14 +6915,14 @@ function exportSaldoCentroCusto() {
 function exportIndicadores() {
     const table = document.getElementById('tableIndicadores');
     if (!table) {
-        alert('Tabela nÃ£o encontrada!');
+        alert('Tabela não encontrada!');
         return;
     }
     
     let csvContent = "";
     const BOM = "\uFEFF";
     
-    // CABEÃ‡ALHO
+    // CABEÇALHO
     const headers = table.querySelectorAll("thead tr th");
     let headerRow = [];
     headers.forEach(th => {
@@ -6930,7 +6930,7 @@ function exportIndicadores() {
         text = text.replace(/"/g, '""');
         headerRow.push('"' + text + '"');
     });
-    csvContent += headerRow.join(";") + "\n";  // â† MUDANÃ‡A AQUI
+    csvContent += headerRow.join(";") + "\n";  // ← MUDANÇA AQUI
     
     // DADOS
     table.querySelectorAll("tbody tr").forEach(tr => {
@@ -6943,7 +6943,7 @@ function exportIndicadores() {
             row.push('"' + value + '"');
         });
         if (row.length > 0) {
-            csvContent += row.join(";") + "\n";  // â† MUDANÃ‡A AQUI
+            csvContent += row.join(";") + "\n";  // ← MUDANÇA AQUI
         }
     });
     
@@ -6956,18 +6956,18 @@ function exportIndicadores() {
     link.click();
 }
 
-// 4. Exportar DemonstraÃ§Ã£o do Resultado do ExercÃ­cio (DRE)
+// 4. Exportar Demonstração do Resultado do Exercício (DRE)
 function exportDRE() {
     const table = document.getElementById('tableDRE');
     if (!table) {
-        alert('Tabela nÃ£o encontrada!');
+        alert('Tabela não encontrada!');
         return;
     }
     
     let csvContent = "";
     const BOM = "\uFEFF";
     
-    // CABEÃ‡ALHO
+    // CABEÇALHO
     const headers = table.querySelectorAll("thead tr th");
     let headerRow = [];
     headers.forEach(th => {
@@ -6975,7 +6975,7 @@ function exportDRE() {
         text = text.replace(/"/g, '""');
         headerRow.push('"' + text + '"');
     });
-    csvContent += headerRow.join(";") + "\n";  // â† MUDANÃ‡A AQUI
+    csvContent += headerRow.join(";") + "\n";  // ← MUDANÇA AQUI
     
     // DADOS
     table.querySelectorAll("tbody tr").forEach(tr => {
@@ -6988,7 +6988,7 @@ function exportDRE() {
             row.push('"' + value + '"');
         });
         if (row.length > 0) {
-            csvContent += row.join(";") + "\n";  // â† MUDANÃ‡A AQUI
+            csvContent += row.join(";") + "\n";  // ← MUDANÇA AQUI
         }
     });
     
@@ -7004,7 +7004,7 @@ function exportDRE() {
 
 
 function initSimuladorFluxoPage() {
-  // Setar datas padrÃ£o do ano vigente
+  // Setar datas padrão do ano vigente
   const currentYear = new Date().getFullYear();
   document.getElementById('startMonthSimFluxo').value = `${currentYear}-01`;
   document.getElementById('endMonthSimFluxo').value = `${currentYear}-12`;
@@ -7029,7 +7029,7 @@ document.querySelectorAll('input[name="dateTypeSimFluxo"]').forEach(radio => {
 });
 
 
-// ==================== ANÃLISE DE RENTABILIDADE ====================
+// ==================== ANÁLISE DE RENTABILIDADE ====================
 
 let globalDataRentabilidade = [];
 
@@ -7046,7 +7046,7 @@ async function loadRentabilidade() {
         // Usar o mesmo conjunto consolidado do dashboard principal
         const combinedData = await loadCombinedCsvData();
         
-        // Filtrar dados vÃ¡lidos
+        // Filtrar dados válidos
         globalDataRentabilidade = combinedData.filter(row => row.paid_new || row.unpaid_new);
         
         // Processar valores
@@ -7079,7 +7079,7 @@ function populateFiltersRentabilidade(data) {
         // Status
         if (row.status) statusSet.add(row.status);
         
-        // Centro de Custo - usar exatamente como nas outras seÃ§Ãµes
+        // Centro de Custo - usar exatamente como nas outras seções
         const costCenter = row['Centro_de_Custo_Unificado'];
         if (costCenter) {
             costCenterSet.add(costCenter);
@@ -7101,7 +7101,7 @@ function populateFiltersRentabilidade(data) {
     console.log('Centros de Custo encontrados:', Array.from(costCenterSet)); // DEBUG
     console.log('Status encontrados:', Array.from(statusSet)); // DEBUG
     
-    // Usar a funÃ§Ã£o populateSelect que jÃ¡ existe no sistema
+    // Usar a função populateSelect que já existe no sistema
     populateSelect('filterStatusRentabilidade', statusSet, true); // true = usar mapeamento de status
     populateSelect('filterCentroCustoRentabilidade', costCenterSet);
     populateSelect('filterCategoriaRentabilidade', categorySet);
@@ -7127,7 +7127,7 @@ function getFilteredDataRentabilidade() {
         .map(o => o.value).filter(v => v);
     
     return globalDataRentabilidade.filter(row => {
-        // Filtros de seleÃ§Ã£o
+        // Filtros de seleção
         if (selectedStatus.length > 0 && !selectedStatus.includes(row.status)) return false;
         if (selectedCentros.length > 0 && !selectedCentros.includes(row['Centro_de_Custo_Unificado'])) return false;
         if (selectedCategorias.length > 0 && !selectedCategorias.includes(row['categoriesRatio.category'])) return false;
@@ -7158,7 +7158,7 @@ function getFilteredDataDRE() {
         .map(o => o.value).filter(v => v);
     
     return rawData.filter(row => {
-        // Filtros bÃ¡sicos
+        // Filtros básicos
         if (selectedStatus.length > 0 && !selectedStatus.includes(row.status)) return false;
         if (selectedCostCenters.length > 0 && !selectedCostCenters.includes(row['Centro_de_Custo_Unificado'])) return false;
         if (selectedCategories.length > 0 && !selectedCategories.includes(row['categoriesRatio.category'])) return false;
@@ -7190,7 +7190,7 @@ function updateRentabilidade() {
     // KPIs
     updateKPIsRentabilidade(filteredData);
     
-    // AnÃ¡lise por Centro de Custo
+    // Análise por Centro de Custo
     updateAnaliseCentrosCustosRentabilidade(filteredData);
 }
 
@@ -7203,7 +7203,7 @@ function updateKPIsRentabilidade(data) {
     const margemBruta = receitaTotal - custoTotal;
     const percMargemBruta = receitaTotal > 0 ? (margemBruta / receitaTotal * 100) : 0;
     
-    // Centros de Custo Ãºnicos
+    // Centros de Custo únicos
     const centrosCusto = new Set(data.filter(r => r['Centro_de_Custo_Unificado']).map(r => r['Centro_de_Custo_Unificado']));
     const centrosCustosLucrativos = Array.from(centrosCusto).filter(centro => {
         const receitaCentro = receitas.filter(r => r['Centro_de_Custo_Unificado'] === centro)
@@ -7282,8 +7282,8 @@ function updateAnaliseCentrosCustosRentabilidade(data) {
     `;
     
     centrosCustosArray.forEach(centro => {
-        const statusIcon = centro.margem >= 0 ? 'âœ…' : 'âŒ';
-        const statusText = centro.margem >= 0 ? 'Lucrativo' : 'PrejuÃ­zo';
+        const statusIcon = centro.margem >= 0 ? '✅' : '❌';
+        const statusText = centro.margem >= 0 ? 'Lucrativo' : 'Prejuízo';
         
         tableHTML += `
             <tr>
@@ -7304,11 +7304,11 @@ function updateAnaliseCentrosCustosRentabilidade(data) {
     tableHTML += `</tbody></table></div>`;
     document.getElementById('tabelaCentrosCustosRentabilidade').innerHTML = tableHTML;
     
-    // GrÃ¡ficos Top 10
+    // Gráficos Top 10
     const top10Receita = centrosCustosArray.slice(0, 10);
     const top10Margem = [...centrosCustosArray].sort((a, b) => b.margemPerc - a.margemPerc).slice(0, 10);
     
-    // GrÃ¡fico Top 10 Receita
+    // Gráfico Top 10 Receita
     Plotly.newPlot('graficoTop10CentrosCustosReceita', [{
         type: 'bar',
         x: top10Receita.map(p => p.receita),
@@ -7329,7 +7329,7 @@ function updateAnaliseCentrosCustosRentabilidade(data) {
         font: { color: '#cbd5e1' }
     }, {responsive: true});
     
-    // GrÃ¡fico Top 10 Margem
+    // Gráfico Top 10 Margem
     Plotly.newPlot('graficoTop10CentrosCustosMargem', [{
         type: 'bar',
         x: top10Margem.map(p => p.margemPerc),
@@ -7353,7 +7353,7 @@ function updateAnaliseCentrosCustosRentabilidade(data) {
 
 
 
-// Event Listeners para AnÃ¡lise de Rentabilidade
+// Event Listeners para Análise de Rentabilidade
 document.addEventListener('DOMContentLoaded', function() {
     const filterElementsRentabilidade = [
         'filterStatusRentabilidade',
@@ -7375,7 +7375,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Listener para mudanÃ§a de tipo de data
+    // Listener para mudança de tipo de data
     document.querySelectorAll('input[name="dateTypeRentabilidade"]').forEach(radio => {
         radio.addEventListener('change', () => {
             if (document.getElementById('rentabilidade').classList.contains('active')) {
@@ -7394,10 +7394,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
        async function exportCurrentPageToPNG(event) {
     event.preventDefault();
-    // Encontrar seÃ§Ã£o ativa
+    // Encontrar seção ativa
     const activeSection = document.querySelector('.page-section.active');
     if (!activeSection) {
-        alert('Nenhuma pÃ¡gina ativa para exportar!');
+        alert('Nenhuma página ativa para exportar!');
         return;
     }
 
@@ -7407,7 +7407,7 @@ document.addEventListener('DOMContentLoaded', function() {
     overlay.innerHTML = `
         <h2>Exportando Imagem</h2>
         <div class="pdf-loading-spinner"></div>
-        <p style="margin-top:20px; font-size:1.1em;">Processando grÃ¡ficos e conteÃºdo...</p>
+        <p style="margin-top:20px; font-size:1.1em;">Processando gráficos e conteúdo...</p>
     `;
     document.body.appendChild(overlay);
 
@@ -7439,7 +7439,7 @@ document.addEventListener('DOMContentLoaded', function() {
             el.style.display = 'block';
         });
 
-        // Fundo escuro para tabelas/cÃ©lulas
+        // Fundo escuro para tabelas/células
         clone.querySelectorAll('table').forEach(table => {
             table.style.background = 'rgba(15,15,35,0.8)';
             table.style.color = '#ffffff';
@@ -7456,8 +7456,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.body.appendChild(clone);
 
-        // ========== CORREÃ‡ÃƒO PARA GRÃFICOS DE INDICADORES ==========
-        // ForÃ§ar visibilidade dos grÃ¡ficos de indicadores (Chart.js)
+        // ========== CORREÇÃO PARA GRÁFICOS DE INDICADORES ==========
+        // Forçar visibilidade dos gráficos de indicadores (Chart.js)
         const indicadoresGraphs = clone.querySelector('#indicadoresGraphsContent');
         if (indicadoresGraphs) {
             indicadoresGraphs.style.display = 'block';
@@ -7466,7 +7466,7 @@ document.addEventListener('DOMContentLoaded', function() {
             indicadoresGraphs.style.height = 'auto';
         }
 
-        // Copiar conteÃºdo dos canvas do Chart.js para o clone
+        // Copiar conteúdo dos canvas do Chart.js para o clone
         clone.querySelectorAll('canvas').forEach(canvasClone => {
             if (canvasClone.id) {
                 const originalCanvas = activeSection.querySelector(`#${canvasClone.id}`);
@@ -7478,9 +7478,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-        // ========== FIM DA CORREÃ‡ÃƒO ==========
+        // ========== FIM DA CORREÇÃO ==========
 
-        // Calcula largura mÃ¡xima real do conteÃºdo
+        // Calcula largura máxima real do conteúdo
         let maxWidth = 1200;
         clone.querySelectorAll('*').forEach(el => {
             if (el.scrollWidth > maxWidth) maxWidth = el.scrollWidth + 40;
@@ -7504,7 +7504,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     el.style.maxWidth = 'none';
                 });
 
-                // Garantir que grÃ¡ficos fiquem 100% expandidos
+                // Garantir que gráficos fiquem 100% expandidos
                 clonedDoc.querySelectorAll('.js-plotly-plot').forEach(chart => {
                     chart.style.width = '100%';
                 });
@@ -7513,27 +7513,27 @@ document.addEventListener('DOMContentLoaded', function() {
                     c.style.maxWidth = 'none';
                 });
 
-                // Remover sticky para nÃ£o cortar nada
+                // Remover sticky para não cortar nada
                 clonedDoc.querySelectorAll("th[position-sticky], td[position-sticky], th.position-sticky, td.position-sticky")
                     .forEach(cell => {
                         cell.style.position = "static";
                         cell.style.left = "auto";
                     });
 
-                // Garantir alinhamento Ã  esquerda nas colunas de texto
+                // Garantir alinhamento à esquerda nas colunas de texto
                 clonedDoc.querySelectorAll(
                     "th, td.col-categoria, td.col-total-receita, td.col-total-despesa, td.col-resultado-liquido"
                 ).forEach(cell => {
                     cell.style.textAlign = "left";
                 });
 
-                // Garantir alinhamento Ã  direita sÃ³ para valores numÃ©ricos
+                // Garantir alinhamento à direita só para valores numéricos
                 clonedDoc.querySelectorAll("td[data-align='right'], td.valor, td.num")
                     .forEach(cell => {
                         cell.style.textAlign = "right";
                     });
 
-                // Garantir que indicadores fiquem visÃ­veis tambÃ©m no onclone
+                // Garantir que indicadores fiquem visíveis também no onclone
                 const indicadoresInClone = clonedDoc.querySelector('#indicadoresGraphsContent');
                 if (indicadoresInClone) {
                     indicadoresInClone.style.display = 'block';
@@ -7559,13 +7559,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.body.removeChild(overlay);
         setTimeout(() => {
-            alert(`âœ… PNG "${fileName}" gerado com sucesso!`);
+            alert(`✅ PNG "${fileName}" gerado com sucesso!`);
         }, 300);
 
     } catch (error) {
         console.error('Erro ao exportar PNG:', error);
         document.body.removeChild(overlay);
-        alert('âŒ Erro ao exportar PNG. Verifique o console para mais detalhes.');
+        alert('❌ Erro ao exportar PNG. Verifique o console para mais detalhes.');
     }
 }
 
